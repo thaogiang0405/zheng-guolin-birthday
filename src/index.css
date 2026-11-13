@@ -37,7 +37,32 @@ button { -webkit-tap-highlight-color: transparent; }
 .page-shell {
   position: relative;
   isolation: isolate;
-  overflow: clip;
+}
+
+.intro-overlay {
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 639px) and (max-height: 700px) {
+  .intro-card {
+    width: min(70vw, 16rem);
+  }
+
+  .intro-gift-button {
+    padding-inline: 1rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.075em;
+  }
+}
+
+@media (max-width: 1023px) and (max-height: 520px) and (orientation: landscape) {
+  .intro-card {
+    width: min(42vw, 13.75rem);
+  }
+
+  .intro-copy {
+    margin-top: 1rem;
+  }
 }
 
 .paper-grain::before {
