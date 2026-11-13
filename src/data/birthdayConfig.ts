@@ -34,6 +34,14 @@ export interface BirthdayConfig {
     finaleImage: string;
     gallery: GalleryItem[];
     musicPath: string | undefined;
+    musicTitle: string;
+    musicSubtitle: string;
+    soundEffects: {
+      gift?: string;
+      letter?: string;
+      candles?: string;
+      finale?: string;
+    };
     videoPath: string | undefined;
   };
   letter: {
@@ -119,8 +127,17 @@ export const birthdayConfig: BirthdayConfig = {
         rotation: "-1.1deg"
       }
     ],
-    // Add optional local files later, for example: asset("media/birthday-song.mp3").
+    // Add optional user-provided/licensed local music later, for example: asset("music/birthday-melody.mp3").
     musicPath: undefined,
+    musicTitle: "Sunshine for Guolin",
+    musicSubtitle: "Add your licensed MP3",
+    // Add only user-provided or licensed local sound files, for example: asset("music/gift-open.mp3").
+    soundEffects: {
+      gift: undefined,
+      letter: undefined,
+      candles: undefined,
+      finale: undefined
+    },
     videoPath: undefined
   },
   letter: {

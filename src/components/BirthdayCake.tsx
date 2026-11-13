@@ -4,6 +4,7 @@ import type { Locale } from "../types";
 
 export interface BirthdayCakeProps {
   locale: Locale;
+  onWishEffect?: () => void;
   labels: {
     eyebrow: string;
     title: string;
@@ -46,7 +47,7 @@ function launchConfetti() {
   window.setTimeout(() => burst({ x: 0.72, y: 0.66 }, 122), 120);
 }
 
-export default function BirthdayCake({ locale, labels }: BirthdayCakeProps) {
+export default function BirthdayCake({ locale, labels, onWishEffect }: BirthdayCakeProps) {
   const [hasWished, setHasWished] = useState(false);
   const [celebrationCount, setCelebrationCount] = useState(0);
   const result = locale === "zh" ? labels.wishResultZh : labels.wishResult;
@@ -54,6 +55,7 @@ export default function BirthdayCake({ locale, labels }: BirthdayCakeProps) {
   const handleWish = () => {
     setHasWished(true);
     setCelebrationCount((count) => count + 1);
+    onWishEffect?.();
     launchConfetti();
   };
 

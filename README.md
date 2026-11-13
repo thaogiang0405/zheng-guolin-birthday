@@ -11,7 +11,8 @@ Microsite sinh nhật tương tác dành tặng Trịnh Quốc Lâm (郑国霖),
 - Phong thư mở tương tác, bánh sinh nhật thổi nến, khói và confetti.
 - Wish wall lưu lời chúc **trên localStorage của trình duyệt hiện tại**; không có backend và không chia sẻ công khai.
 - Tôn trọng `prefers-reduced-motion`, có focus state, semantic landmark và responsive từ 320px.
-- Nút nhạc chỉ xuất hiện khi được cấu hình file âm thanh hợp lệ; không tự phát nhạc và không có URL âm thanh bị hỏng.
+- Music player glassmorphism với đĩa vinyl, play/pause, mute, volume, seek/progress và trạng thái trống an toàn khi chưa có MP3.
+- Nhạc chỉ được yêu cầu phát sau thao tác **Mở món quà sinh nhật**; hiệu ứng âm thanh tùy chọn sẽ tự hạ âm lượng nhạc nền rồi khôi phục.
 
 ## Yêu cầu
 
@@ -78,12 +79,23 @@ Ví dụ:
 heroImage: asset("images/hero-moi.jpg")
 ```
 
-## Thêm nhạc nền tùy chọn
+## Thêm nhạc nền và hiệu ứng âm thanh tùy chọn
 
-Website không đính kèm nhạc thương mại và không tự phát nhạc. Để bật trình điều khiển nhạc:
+Website không đính kèm nhạc thương mại, không tự phát nhạc lúc tải trang và không dùng URL âm thanh bên ngoài. Khi chưa có MP3, player vẫn hiển thị trạng thái sẵn sàng thay vì tạo lỗi phát nhạc.
 
-1. Thêm một file âm thanh có quyền sử dụng, ví dụ `public/media/birthday-melody.mp3`.
-2. Trong `src/data/birthdayConfig.ts`, đổi:
+1. Chỉ dùng file do bạn sở hữu hoặc được cấp phép sử dụng.
+2. Thêm MP3 vào `public/music/`, ví dụ:
+
+```txt
+public/music/
+  birthday-melody.mp3
+  gift-open.mp3
+  letter-open.mp3
+  candles.mp3
+  finale.mp3
+```
+
+3. Trong `src/data/birthdayConfig.ts`, đổi:
 
 ```ts
 musicPath: undefined
@@ -92,10 +104,21 @@ musicPath: undefined
 thành:
 
 ```ts
-musicPath: asset("media/birthday-melody.mp3")
+musicPath: asset("music/birthday-melody.mp3")
 ```
 
-Nút play/pause/mute sẽ tự xuất hiện. Âm thanh chỉ bắt đầu khi người xem bấm nút.
+4. Muốn thêm âm thanh nhỏ cho các tương tác, cấu hình các đường dẫn sau:
+
+```ts
+soundEffects: {
+  gift: asset("music/gift-open.mp3"),
+  letter: asset("music/letter-open.mp3"),
+  candles: asset("music/candles.mp3"),
+  finale: asset("music/finale.mp3")
+}
+```
+
+Nhạc nền chỉ bắt đầu sau khi khách bấm **Mở món quà sinh nhật**. Người xem luôn có thể play/pause, mute/unmute, điều chỉnh âm lượng và tua bài nhạc. Khi một hiệu ứng âm thanh được cấu hình phát, âm lượng nhạc nền được hạ nhẹ rồi tự khôi phục.
 
 ## Deploy GitHub Pages
 

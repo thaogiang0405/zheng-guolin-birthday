@@ -10,6 +10,7 @@ import { FloatingDecorations } from "./components/FloatingDecorations";
 import { HeroSection } from "./components/HeroSection";
 import MemoryGallery from "./components/MemoryGallery";
 import { MusicPlayer } from "./components/MusicPlayer";
+import { AudioExperienceProvider, useAudioExperience } from "./audio/AudioExperience";
 import WishWall from "./components/WishWall";
 import { birthdayConfig } from "./data/birthdayConfig";
 import { copy } from "./data/copy";
@@ -17,6 +18,12 @@ import type { Locale } from "./types";
 
 const languageStorageKey = "sunshine-for-guolin-language";
 const themeStorageKey = "sunshine-for-guolin-theme";
+const audioConfig = {
+  musicPath: birthdayConfig.media.musicPath,
+  effects: birthdayConfig.media.soundEffects,
+  title: birthdayConfig.media.musicTitle,
+  subtitle: birthdayConfig.media.musicSubtitle,
+};
 
 function getStoredLocale(): Locale {
   try {
@@ -37,6 +44,15 @@ function getStoredTheme(): boolean {
 }
 
 export default function App() {
+  return (
+    <AudioExperienceProvider config={audioConfig}>
+      <BirthdayExperience />
+    </AudioExperienceProvider>
+  );
+}
+
+function BirthdayExperience() {
+  const audio = useAudioExperience();
   const [locale, setLocale] = useState<Locale>(getStoredLocale);
   const [dark, setDark] = useState(getStoredTheme);
   const [introOpen, setIntroOpen] = useState(true);
@@ -60,6 +76,8 @@ export default function App() {
   }, [dark]);
 
   const openGift = () => {
+    void audio.startAfterGift();
+    void audio.playEffect("gift");
     setIntroOpen(false);
     if (!window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) {
       confetti({
@@ -145,6 +163,7 @@ export default function App() {
         <BirthdayLetter
           locale={locale}
           letter={birthdayConfig.letter.localized[locale]}
+          onOpenEffect={() => { void audio.playEffect("letter"); }}
           labels={{
             eyebrow: t.letter.eyebrow,
             title: t.letter.title,
@@ -156,6 +175,7 @@ export default function App() {
 
         <BirthdayCake
           locale={locale}
+          onWishEffect={() => { void audio.playEffect("candles"); }}
           labels={{
             eyebrow: t.cake.eyebrow,
             title: t.cake.title,
@@ -184,6 +204,7 @@ export default function App() {
         <BirthdayFinale
           locale={locale}
           image={birthdayConfig.media.finaleImage}
+          onCelebrateEffect={() => { void audio.playEffect("finale"); }}
           labels={{
             eyebrow: t.finale.eyebrow,
             title: t.finale.title,
@@ -203,7 +224,11 @@ export default function App() {
         </div>
       </footer>
 
-      <MusicPlayer src={birthdayConfig.media.musicPath} label={t.a11y.musicOn} />
+      <MusicPlayer
+        labels={t.music}
+        title={birthdayConfig.media.musicTitle}
+        subtitle={birthdayConfig.media.musicSubtitle}
+      />
     </div>
   );
 }

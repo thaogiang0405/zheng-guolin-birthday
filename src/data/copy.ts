@@ -10,6 +10,19 @@ export interface SiteCopy {
     switchToLight: string;
     switchToDark: string;
   };
+  music: {
+    title: string;
+    unavailable: string;
+    error: string;
+    play: string;
+    pause: string;
+    mute: string;
+    unmute: string;
+    volume: string;
+    progress: string;
+    addMusicHint: string;
+    errorHint: string;
+  };
   intro: {
     eyebrow: string;
     title: string;
@@ -119,6 +132,19 @@ export const copy: Record<Locale, SiteCopy> = {
       switchToLight: "Chuyển sang giao diện sáng",
       switchToDark: "Chuyển sang giao diện tối"
     },
+    music: {
+      title: "Nhạc nền",
+      unavailable: "Nhạc chưa được thêm",
+      error: "Không thể phát tệp nhạc",
+      play: "Phát nhạc nền",
+      pause: "Tạm dừng nhạc nền",
+      mute: "Tắt tiếng nhạc nền",
+      unmute: "Bật tiếng nhạc nền",
+      volume: "Âm lượng nhạc nền",
+      progress: "Tiến trình bài nhạc",
+      addMusicHint: "Thêm MP3 vào public/music/ để bật nhạc.",
+      errorHint: "Kiểm tra tên tệp và đường dẫn nhạc trong cấu hình."
+    },
     intro: {
       eyebrow: "SUNSHINE FOR GUOLIN",
       title: "Dành riêng cho Quốc Lâm",
@@ -225,6 +251,19 @@ export const copy: Record<Locale, SiteCopy> = {
       themeLabel: "主题",
       switchToLight: "切换至浅色模式",
       switchToDark: "切换至深色模式"
+    },
+    music: {
+      title: "背景音乐",
+      unavailable: "音乐尚未添加",
+      error: "无法播放音乐文件",
+      play: "播放背景音乐",
+      pause: "暂停背景音乐",
+      mute: "静音背景音乐",
+      unmute: "取消静音背景音乐",
+      volume: "背景音乐音量",
+      progress: "音乐进度",
+      addMusicHint: "将 MP3 添加到 public/music/ 后即可启用。",
+      errorHint: "请检查音乐文件名和配置路径。"
     },
     intro: {
       eyebrow: "SUNSHINE FOR GUOLIN",

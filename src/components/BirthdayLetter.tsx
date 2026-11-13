@@ -7,6 +7,7 @@ import type { Locale } from "../types";
 interface BirthdayLetterProps {
   locale: Locale;
   letter: string[];
+  onOpenEffect?: () => void;
   labels: {
     eyebrow: string;
     title: string;
@@ -16,13 +17,14 @@ interface BirthdayLetterProps {
   };
 }
 
-export function BirthdayLetter({ locale, letter, labels }: BirthdayLetterProps) {
+export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: BirthdayLetterProps) {
   const [isOpen, setIsOpen] = useState(false);
   const reduceMotion = useReducedMotion();
 
   const openLetter = () => {
     if (isOpen) return;
     setIsOpen(true);
+    onOpenEffect?.();
     if (!reduceMotion) {
       confetti({
         particleCount: 42,

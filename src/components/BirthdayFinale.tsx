@@ -6,6 +6,7 @@ import type { Locale } from "../types";
 interface BirthdayFinaleProps {
   locale: Locale;
   image: string;
+  onCelebrateEffect?: () => void;
   labels: {
     eyebrow: string;
     title: string;
@@ -15,10 +16,11 @@ interface BirthdayFinaleProps {
   };
 }
 
-export function BirthdayFinale({ locale, image, labels }: BirthdayFinaleProps) {
+export function BirthdayFinale({ locale, image, labels, onCelebrateEffect }: BirthdayFinaleProps) {
   const reduceMotion = useReducedMotion();
 
   const celebrate = () => {
+    onCelebrateEffect?.();
     if (reduceMotion) return;
     const colors = ["#F6CE4B", "#D7AC64", "#A9DDF1", "#FFF5E4"];
     confetti({ particleCount: 84, spread: 110, startVelocity: 35, origin: { y: 0.7 }, colors, scalar: 1.02 });
