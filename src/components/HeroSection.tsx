@@ -70,7 +70,7 @@ export function HeroSection({ locale, image, labels }: HeroSectionProps) {
             ))}
           </div>
 
-          <a href="#moments" className="outline-button mt-10 w-fit border-[#F2D58A]/45 text-[#FFF5E4]">
+          <a href="#memories" className="outline-button mt-10 w-fit border-[#F2D58A]/45 text-[#FFF5E4]">
             {labels.scroll}<ArrowDown className="h-4 w-4" aria-hidden="true" />
           </a>
         </motion.div>
