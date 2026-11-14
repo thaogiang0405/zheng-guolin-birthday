@@ -42,7 +42,7 @@ export const featuredFilms: FeaturedFilm[] = [
     ),
     highlight: "01",
     photos: [
-      slot("sui-tang-portrait", "Trịnh Quốc Lâm trong vai Lý Thế Dân, Tùy Đường Anh Hùng Truyện (2003)", "郑国霖饰演李世民，《隋唐英雄传》(2003)", "https://p1-tt.byteimg.com/origin/pgc-image/e479d61636f24a1980c2f78ac431eae5.jpg"),
+      slot("sui-tang-portrait", "Trịnh Quốc Lâm trong vai Lý Thế Dân, Tùy Đường Anh Hùng Truyện (2003)", "郑国霖饰演李世民，《隋唐英雄传》(2003)"),
       slot("sui-tang-scene", "Chỗ đặt ảnh phân cảnh Lý Thế Dân (2003)", "李世民（2003）剧情照片待补"),
     ],
     referenceUrl: "https://ent.sina.com.cn/v/2004-08-05/1050464726.html",
@@ -80,22 +80,6 @@ export const featuredFilms: FeaturedFilm[] = [
     referenceUrl: "https://ent.sina.com.cn/v/m/2014-12-05/doc-icesifvx0377459.shtml",
   },
   {
-    id: "moon-2023",
-    year: 2023,
-    title: local("Trường Nguyệt Tẫn Minh", "长月烬明"),
-    character: local("Cù Huyền Tử", "衢玄子"),
-    description: local(
-      "Mái tóc bạc và phong thái điềm tĩnh tạo nên một vị chưởng môn đầy tiên khí, khiến người xem lưu luyến.",
-      "一袭白发，气度沉静，衢玄子的仙风道骨令人过目难忘。",
-    ),
-    highlight: "04",
-    photos: [
-      slot("moon-portrait", "Trịnh Quốc Lâm vai Cù Huyền Tử trong Trường Nguyệt Tẫn Minh (2023)", "郑国霖饰演衢玄子，《长月烬明》(2023)", "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/882b029b74cb4641a76e52ae44fe5a62.jpg"),
-      slot("moon-scene", "Phân cảnh Cù Huyền Tử trong Trường Nguyệt Tẫn Minh (2023)", "《长月烬明》衢玄子剧情照（2023）", "https://p0.itc.cn/images01/20230511/c6ea8236688c43e5a44a17e7f330a413.jpeg"),
-    ],
-    referenceUrl: "https://wapbaike.baidu.com/item/%E9%95%BF%E6%9C%88%E7%83%AC%E6%98%8E/59071327",
-  },
-  {
     id: "chongzi-2023",
     year: 2023,
     title: local("Trọng Tử", "重紫"),
@@ -104,11 +88,27 @@ export const featuredFilms: FeaturedFilm[] = [
       "Trác Diệu để lại dấu ấn bởi khí chất uy nghiêm, cùng những tình cảm sâu sắc phía sau dáng vẻ ấy.",
       "卓耀的威严气度之下，也藏着令人动容的深情。",
     ),
-    highlight: "05",
+    highlight: "04",
     photos: [
       slot("chongzi-portrait", "Ảnh tạo hình Trịnh Quốc Lâm vai Trác Diệu trong Trọng Tử (2023)", "郑国霖饰演卓耀，《重紫》(2023)定妆照", "https://k.sinaimg.cn/n/sinakd20210830ac/301/w484h617/20210830/3101-0c2cc34df3108f86f131c81ae9d93c1c.jpg/w700d1q75cms.jpg"),
       slot("chongzi-scene", "Chỗ đặt ảnh phân cảnh Trác Diệu trong Trọng Tử (2023)", "《重紫》卓耀（2023）剧情照片待补"),
     ],
-    referenceUrl: "https://zh.wikipedia.org/wiki/%E9%87%8D%E7%B4%AB",
+    referenceUrl: "https://bkso.baidu.com/item/%E9%87%8D%E7%B4%AB/18814284",
+  },
+  {
+    id: "moon-2023",
+    year: 2023,
+    title: local("Trường Nguyệt Tẫn Minh", "长月烬明"),
+    character: local("Cù Huyền Tử", "衢玄子"),
+    description: local(
+      "Mái tóc bạc và phong thái điềm tĩnh tạo nên một vị chưởng môn đầy tiên khí, khiến người xem lưu luyến.",
+      "一袭白发，气度沉静，衢玄子的仙风道骨令人过目难忘。",
+    ),
+    highlight: "05",
+    photos: [
+      slot("moon-portrait", "Trịnh Quốc Lâm vai Cù Huyền Tử trong Trường Nguyệt Tẫn Minh (2023)", "郑国霖饰演衢玄子，《长月烬明》(2023)", "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/882b029b74cb4641a76e52ae44fe5a62.jpg"),
+      slot("moon-scene", "Phân cảnh Cù Huyền Tử trong Trường Nguyệt Tẫn Minh (2023)", "《长月烬明》衢玄子剧情照（2023）", "https://p0.itc.cn/images01/20230511/c6ea8236688c43e5a44a17e7f330a413.jpeg"),
+    ],
+    referenceUrl: "https://wapbaike.baidu.com/item/%E9%95%BF%E6%9C%88%E7%83%AC%E6%98%8E/59071327",
   },
 ];
