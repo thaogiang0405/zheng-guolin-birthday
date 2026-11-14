@@ -139,6 +139,7 @@ function BirthdayExperience() {
             eyebrow: t.hero.eyebrow,
             titleLineOne: t.hero.titleLineOne,
             titleLineTwo: t.hero.titleLineTwo,
+            subtitle: t.hero.editorialSubtitle,
             body: t.hero.editorialBody,
             chineseAccent: t.hero.chineseAccent,
             warmWords: t.hero.warmWords,
