@@ -72,7 +72,7 @@ export default function BirthdayCake({ locale, labels, onWishEffect }: BirthdayC
           </p>
           <h2
             id="cake-title"
-            className="font-editorial text-4xl font-semibold leading-tight text-ink dark:text-[#FFF5E4] sm:text-5xl"
+            className={`text-4xl font-semibold leading-tight text-ink dark:text-[#FFF5E4] sm:text-5xl ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}
           >
             {labels.title}
           </h2>
