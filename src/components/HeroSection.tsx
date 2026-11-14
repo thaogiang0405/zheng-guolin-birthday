@@ -60,7 +60,7 @@ export function HeroSection({ locale, image, labels }: HeroSectionProps) {
             <span className="block">{labels.titleLineOne}</span>
             <span className="block sd-hero__gold">{labels.titleLineTwo}</span>
           </h2>
-          <p className={`mt-6 max-w-lg font-editorial text-lg italic leading-7 text-[#F2D58A] sm:text-xl ${locale === "zh" ? "font-chinese not-italic" : ""}`}>{labels.subtitle}</p>
+          <p className={`mt-6 max-w-lg font-editorial text-lg italic leading-7 text-[#F2D58A] sm:text-xl ${locale === "zh" ? "font-chinese not-italic" : "font-vietnamese"}`}>{labels.subtitle}</p>
           <p className={`mt-5 max-w-lg whitespace-pre-line text-sm leading-7 text-[#FFF5E4]/80 sm:text-base sm:leading-8 ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.body}</p>
 
           <div className="mt-9 flex flex-wrap gap-x-5 gap-y-3">
