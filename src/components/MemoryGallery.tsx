@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { AnimatePresence, motion, type PanInfo } from "framer-motion";
-import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Film, Maximize2, Sparkles, X } from "lucide-react";
 import type { GalleryItem, Locale } from "../types";
+import { featuredFilms } from "../data/filmCollection";
+import { birthdayConfig } from "../data/birthdayConfig";
 
 type GalleryLabels = {
   sectionEyebrow: string;
@@ -186,6 +188,91 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
           </p>
         </header>
 
+
+        {/* Five verified roles: temporary source images where available, styled placeholders elsewhere. */}
+        <div className="mb-12 flex flex-col gap-3 border-b border-[#bd9763]/25 pb-7 dark:border-[#e7c990]/20 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="font-editorial text-2xl font-semibold text-[#463323] dark:text-[#ffe6bd] sm:text-3xl">
+              {locale === "zh" ? "光影中的他" : "Trịnh lão sư trên màn ảnh"}
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[#6e5e51] dark:text-slate-300">
+              {locale === "zh" ? "五部作品，五段珍贵的光影记忆。" : "Năm bộ phim, năm dấu ấn đáng nhớ qua từng vai diễn."}
+            </p>
+          </div>
+          <span className="shrink-0 font-editorial text-sm italic text-[#92704b] dark:text-[#e9d0a6]">ON SCREEN · 2003 — 2023</span>
+        </div>
+
+        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 xl:gap-9">
+          {featuredFilms.map((film, index) => (
+            <motion.article
+              key={film.id}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, delay: Math.min(index * 0.06, 0.2) }}
+              className={"group relative overflow-hidden rounded-[1.6rem] border border-[#ddc096]/50 bg-[#fffaf1]/95 p-4 shadow-[0_24px_60px_rgba(88,55,30,.10)] dark:border-[#d7ac64]/20 dark:bg-[#273148]/90 sm:p-5 " + (index === 4 ? "md:col-span-2" : "")}
+            >
+              <div className="pointer-events-none absolute -right-9 -top-11 text-[9rem] leading-none text-[#d9bd8a]/10 dark:text-[#f4d38c]/10" aria-hidden="true">✦</div>
+              <div className="relative z-10 mb-4 flex items-center justify-between gap-4">
+                <span className="font-editorial text-3xl italic text-[#bb9160] dark:text-[#e8bd7f]">{film.highlight}</span>
+                <span className="rounded-full border border-[#cba86f]/35 bg-[#f2e3c8]/70 px-3 py-1 text-xs font-bold tracking-[.12em] text-[#705336] dark:bg-[#cba86f]/10 dark:text-[#f2d7a9]">{film.year}</span>
+              </div>
+              <div className="relative z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-3">
+                {film.photos.map((photo, imageIndex) => (
+                  <figure key={photo.id} className="min-w-0">
+                    <div className={"relative overflow-hidden rounded-xl border border-[#f4e5ca]/70 bg-gradient-to-br " + (index % 3 === 0 ? "from-[#2d384f] via-[#6b5870] to-[#c69d62]" : index % 3 === 1 ? "from-[#334b52] via-[#618078] to-[#e3c39a]" : "from-[#313b58] via-[#82718a] to-[#caa178]") + " " + (imageIndex === 0 ? "aspect-[4/5]" : "aspect-[4/5]")}>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-2 text-center text-[#fff2d8]" aria-hidden="true">
+                        <span className="mb-2 text-3xl opacity-60">✧</span>
+                        <span className="font-chinese text-[clamp(0.7rem,2vw,1.1rem)] font-semibold leading-relaxed">{film.character.zh.split(" · ")[0]}</span>
+                        <span className="mt-3 text-[.56rem] font-medium tracking-[.15em] opacity-70">{locale === "zh" ? "照片待补" : "ẢNH TẠM"}</span>
+                      </div>
+                      {photo.src && (
+                        <img
+                          src={photo.src}
+                          alt={photo.alt[locale]}
+                          loading="lazy"
+                          decoding="async"
+                          referrerPolicy="no-referrer"
+                          onError={(event) => { event.currentTarget.style.display = "none"; }}
+                          className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.035]"
+                        />
+                      )}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#131a2c]/35 via-transparent to-transparent" aria-hidden="true" />
+                    </div>
+                  </figure>
+                ))}
+              </div>
+              <div className="relative z-10 mt-5">
+                <p className="font-chinese text-xs font-semibold tracking-[.08em] text-[#967142] dark:text-[#e4bb79]">{film.title.zh}</p>
+                <h3 className="mt-1 font-editorial text-xl font-semibold leading-snug text-[#29283c] dark:text-[#fff5e4] sm:text-2xl">
+                  {film.title[locale]}
+                </h3>
+                <p className="mt-2 text-xs font-bold uppercase tracking-[.10em] text-[#87613c] dark:text-[#f1d097]">
+                  {locale === "zh" ? "饰演" : "Vai diễn"} · {film.character[locale]}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-[#685b4e] dark:text-[#d3dae9]">{film.description[locale]}</p>
+                <a
+                  href={film.referenceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex min-h-10 items-center gap-2 text-xs font-semibold text-[#8d652f] underline-offset-4 hover:underline dark:text-[#f1c986]"
+                >
+                  {locale === "zh" ? "查看作品资料" : "Xem tư liệu về vai diễn"} <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mb-10 mt-20 flex flex-col gap-2 border-b border-[#bd9763]/25 pb-7 dark:border-[#e7c990]/20 sm:mt-24">
+          <p className="font-editorial text-2xl font-semibold text-[#463323] dark:text-[#ffe6bd] sm:text-3xl">
+            {locale === "zh" ? "镜头外的温柔时光" : "Trịnh lão sư của hiện tại"}
+          </p>
+          <p className="text-sm leading-7 text-[#6e5e51] dark:text-slate-300">
+            {locale === "zh" ? "从荧幕到身边，珍藏那些真实而温暖的瞬间。" : "Ngoài những vai diễn, còn có một Trịnh lão sư gần gũi trong những khoảnh khắc đời thường."}
+          </p>
+        </div>
+
         <ul className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-9" aria-label={labels.title}>
           {items.map((item, index) => (
             <motion.li
@@ -228,6 +315,55 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
             </motion.li>
           ))}
         </ul>
+
+
+        <div className="mt-7 flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[#bb9b6b]/45 bg-[#fffaf1]/50 px-5 py-10 text-center dark:bg-[#273148]/50">
+          <Sparkles size={23} className="text-[#bd9763] dark:text-[#f5cf84]" aria-hidden="true" />
+          <p className="font-editorial text-lg text-[#473c36] dark:text-[#ffe8c6]">
+            {locale === "zh" ? "还有更多温暖的瞬间，等待珍藏…" : "Vẫn còn những khoảnh khắc đẹp đang chờ được lưu giữ…"}
+          </p>
+          <p className="text-xs text-[#7f705c] dark:text-slate-300">
+            {locale === "zh" ? "更多近期照片即将补充" : "Đang dành chỗ cho những bức ảnh hiện tại tiếp theo"}
+          </p>
+        </div>
+
+        <div className="relative mt-24 overflow-hidden rounded-[2rem] border border-[#eed29a]/30 bg-[radial-gradient(ellipse_at_75%_20%,#455374_0%,#202d45_45%,#151b30_100%)] p-6 shadow-[0_28px_80px_rgba(21,29,48,.2)] sm:p-10">
+          <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[#eec56f]/15 blur-3xl" />
+          <div className="relative z-10 grid items-center gap-7 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+            <div className="flex aspect-[4/5] max-h-[420px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-[#e5b96c]/45 bg-[radial-gradient(circle_at_40%_35%,#5b678b,#20253d_60%,#111725)] text-center shadow-[0_16px_60px_rgba(0,0,0,.22)]">
+              {birthdayConfig.media.videoPath ? (
+                <video
+                  src={birthdayConfig.media.videoPath}
+                  poster={birthdayConfig.media.heroImage}
+                  preload="none"
+                  controls
+                  playsInline
+                  className="h-full w-full object-contain"
+                />
+              ) : (
+                <div className="flex h-full w-full flex-col items-center justify-center gap-5 p-5" aria-label={locale === "zh" ? "视频待添加" : "Chưa có video"}>
+                  <Film size={48} className="text-[#f2d58a]" aria-hidden="true" />
+                  <span className="font-editorial text-3xl italic text-[#fff1d4]">A Journey<br />Through Time</span>
+                  <span className="text-2xl text-[#f2d58a]" aria-hidden="true">✧ ✦ ✧</span>
+                  <span className="rounded-full border border-[#e9c78c]/45 px-4 py-2 text-[.66rem] font-bold uppercase tracking-[.16em] text-[#eacb99]">
+                    {locale === "zh" ? "纪念视频即将上线" : "VIDEO ĐANG CHỜ BỔ SUNG"}
+                  </span>
+                </div>
+              )}
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.22em] text-[#f1ce87]">A LITTLE FILM, FOR YOU</p>
+              <h3 className="mt-4 font-editorial text-3xl font-semibold leading-tight text-[#fff7e6] sm:text-4xl">From the Screen,<br /><span className="italic text-[#f0ca82]">With Love.</span></h3>
+              <p className="mt-5 text-sm leading-8 text-[#e7e5e9]">
+                {locale === "zh" ? "从荧幕上的角色，到如今一次次温暖的相遇，时光流转，那份喜欢始终如一。" : "Từ những vai diễn năm ấy đến những cuộc gặp gỡ hôm nay, thời gian trôi qua nhưng những kỷ niệm đẹp vẫn luôn ở lại."}
+              </p>
+              <p className="mt-6 font-chinese text-lg text-[#eed29a]">光影流转，温暖如初。</p>
+              <p className="mt-3 text-xs leading-6 text-[#bcc5d5]">
+                {birthdayConfig.media.videoPath ? (locale === "zh" ? "点击视频即可观看" : "Bấm phát để xem video kỷ niệm") : (locale === "zh" ? "等待一段特别的粉丝剪辑" : "Dành chỗ cho video fan edit tổng hợp 45–60 giây")}
+              </p>
+            </div>
+          </div>
+        </div>
 
         {items.length === 0 && (
           <p className="mx-auto max-w-md rounded-2xl border border-champagne/30 bg-white/60 px-6 py-8 text-center text-sm leading-6 text-ink/60 shadow-soft dark:bg-slate-900/70 dark:text-slate-300">
