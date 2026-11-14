@@ -2,6 +2,7 @@ import confetti from "canvas-confetti";
 import { PartyPopper, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Locale } from "../types";
+import { StardustField } from "./StardustField";
 
 interface BirthdayFinaleProps {
   locale: Locale;
@@ -31,6 +32,7 @@ export function BirthdayFinale({ locale, image, labels, onCelebrateEffect }: Bir
   return (
     <section className="section-shell relative isolate min-h-[90svh] overflow-hidden bg-[linear-gradient(135deg,#F6CE4B_0%,#FFF0B8_44%,#A9DDF1_130%)]" id="finale">
       <div className="finale-sun pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
+      <StardustField variant="finale" />
       <Balloons />
       <div className="relative z-10 mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">
         <motion.div
