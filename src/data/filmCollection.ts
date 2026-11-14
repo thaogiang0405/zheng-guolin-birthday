@@ -59,8 +59,8 @@ export const featuredFilms: FeaturedFilm[] = [
     ),
     highlight: "02",
     photos: [
-      slot("seven-fairies-portrait", "Chỗ đặt chân dung Đổng Vĩnh (2005)", "董永（2005）角色肖像待补"),
-      slot("seven-fairies-scene", "Chỗ đặt phân cảnh Đổng Vĩnh và Thất Tiên Nữ (2005)", "董永与七仙女（2005）剧情照片待补"),
+      slot("seven-fairies-portrait", "Hình ảnh hai nhân vật trong trang phục cổ trang, Hoan Thiên Hỉ Địa Thất Tiên Nữ (2005)", "《欢天喜地七仙女》（2005）两位古装角色合影", asset("images/films/seven-fairies-portrait.webp")),
+      slot("seven-fairies-scene", "Phân cảnh ôm nhau trong Hoan Thiên Hỉ Địa Thất Tiên Nữ (2005)", "《欢天喜地七仙女》（2005）相拥剧照", asset("images/films/seven-fairies-scene.webp")),
     ],
     referenceUrl: "https://ent.sina.com.cn/v/2004-08-18/1743477603.html",
   },
