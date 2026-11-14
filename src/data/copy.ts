@@ -178,7 +178,7 @@ export const copy: Record<Locale, SiteCopy> = {
     gallery: {
       eyebrow: "NHỮNG KHOẢNH KHẮC ÁNH VÀNG",
       title: "Những khoảnh khắc đáng giữ gìn",
-      description: "Những lát cắt nhỏ của niềm vui, được cất giữ bằng cả trái tim.",
+      description: "Từ những nhân vật đáng nhớ trên màn ảnh đến những cuộc gặp gỡ gần gũi hôm nay — mỗi khoảnh khắc của Trịnh lão sư đều là một kỷ niệm đẹp đáng giữ gìn.",
       openImage: "Xem ảnh",
       openImageAria: "Mở ảnh ở chế độ toàn màn hình",
       closeLightbox: "Đóng trình xem ảnh",
@@ -299,7 +299,7 @@ export const copy: Record<Locale, SiteCopy> = {
     gallery: {
       eyebrow: "鎏金瞬间",
       title: "值得珍藏的时刻",
-      description: "把每一帧小小的欢喜，都珍藏在心里。",
+      description: "从荧幕上令人难忘的角色，到如今温暖而亲切的相遇，郑老师的每一个瞬间，都值得好好珍藏。",
       openImage: "查看照片",
       openImageAria: "全屏打开照片",
       closeLightbox: "关闭图片查看器",
