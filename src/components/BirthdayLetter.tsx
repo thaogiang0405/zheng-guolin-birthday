@@ -47,7 +47,7 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: Birthda
           transition={{ duration: reduceMotion ? 0.01 : 0.65 }}
         >
           <p className="section-kicker">{labels.eyebrow}</p>
-          <h2 className={`font-editorial mt-7 text-[clamp(3rem,6vw,5.6rem)] font-semibold leading-[0.9] tracking-[-0.055em] text-[#29282C] dark:text-[#FFF5E4] ${locale === "zh" ? "font-chinese tracking-[-0.035em]" : ""}`}>{labels.title}</h2>
+          <h2 className={`font-editorial mt-7 text-[clamp(3rem,6vw,5.6rem)] font-semibold leading-[0.9] tracking-[-0.055em] text-[#29282C] dark:text-[#FFF5E4] ${locale === "zh" ? "font-chinese tracking-[-0.035em]" : "font-vietnamese"}`}>{labels.title}</h2>
           <p className="mt-7 max-w-sm text-base leading-8 text-[#29282C]/65 dark:text-[#FFF5E4]/70">{isOpen ? "✦" : "✉"}</p>
         </motion.header>
 
