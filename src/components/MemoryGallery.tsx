@@ -210,17 +210,19 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: Math.min(index * 0.06, 0.2) }}
-              className={"group relative overflow-hidden rounded-[1.6rem] border border-[#ddc096]/50 bg-[#fffaf1]/95 p-4 shadow-[0_24px_60px_rgba(88,55,30,.10)] dark:border-[#d7ac64]/20 dark:bg-[#273148]/90 sm:p-5 " + (index === 4 ? "md:col-span-2" : "")}
+              className={"group relative overflow-hidden rounded-[1.6rem] border border-[#ddc096]/50 bg-[#fffaf1]/95 p-4 shadow-[0_24px_60px_rgba(88,55,30,.10)] dark:border-[#d7ac64]/20 dark:bg-[#273148]/90 sm:p-5 " + (film.id === "moon-2023" ? "md:col-span-2" : "")}
             >
               <div className="pointer-events-none absolute -right-9 -top-11 text-[9rem] leading-none text-[#d9bd8a]/10 dark:text-[#f4d38c]/10" aria-hidden="true">✦</div>
               <div className="relative z-10 mb-4 flex items-center justify-between gap-4">
                 <span className="font-editorial text-3xl italic text-[#bb9160] dark:text-[#e8bd7f]">{film.highlight}</span>
                 <span className="rounded-full border border-[#cba86f]/35 bg-[#f2e3c8]/70 px-3 py-1 text-xs font-bold tracking-[.12em] text-[#705336] dark:bg-[#cba86f]/10 dark:text-[#f2d7a9]">{film.year}</span>
               </div>
-              <div className="relative z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-3">
+              <div className={film.id === "moon-2023"
+                ? "relative z-10 grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] grid-rows-2 gap-3"
+                : "relative z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-3"}>
                 {film.photos.map((photo, imageIndex) => (
-                  <figure key={photo.id} className="min-w-0">
-                    <div className={"relative overflow-hidden rounded-xl border border-[#f4e5ca]/70 bg-gradient-to-br " + (index % 3 === 0 ? "from-[#2d384f] via-[#6b5870] to-[#c69d62]" : index % 3 === 1 ? "from-[#334b52] via-[#618078] to-[#e3c39a]" : "from-[#313b58] via-[#82718a] to-[#caa178]") + " " + (imageIndex === 0 ? "aspect-[4/5]" : "aspect-[4/5]")}>
+                  <figure key={photo.id} className={film.id === "moon-2023" && imageIndex === 0 ? "row-span-2 min-w-0" : "min-w-0"}>
+                    <div className={"relative overflow-hidden rounded-xl border border-[#f4e5ca]/70 bg-gradient-to-br " + (index % 3 === 0 ? "from-[#2d384f] via-[#6b5870] to-[#c69d62]" : index % 3 === 1 ? "from-[#334b52] via-[#618078] to-[#e3c39a]" : "from-[#313b58] via-[#82718a] to-[#caa178]") + " " + (film.id === "moon-2023" ? (imageIndex === 0 ? "aspect-[2/3]" : "h-full min-h-[130px]") : "aspect-[4/5]")}>
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-2 text-center text-[#fff2d8]" aria-hidden="true">
                         <span className="mb-2 text-3xl opacity-60">✧</span>
                         <span className="font-chinese text-[clamp(0.7rem,2vw,1.1rem)] font-semibold leading-relaxed">{film.character.zh.split(" · ")[0]}</span>
@@ -250,7 +252,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
                 <p className="mt-2 text-xs font-bold uppercase tracking-[.10em] text-[#87613c] dark:text-[#f1d097]">
                   {locale === "zh" ? "饰演" : "Vai diễn"} · {film.character[locale]}
                 </p>
-                <p className="mt-3 text-sm leading-7 text-[#685b4e] dark:text-[#d3dae9]">{film.description[locale]}</p>
+                <p className={`mt-3 text-sm text-[#685b4e] dark:text-[#d3dae9] ${film.id === "moon-2023" ? "max-w-3xl leading-8 sm:text-base" : "leading-7"}`}>{film.description[locale]}</p>
                 <a
                   href={film.referenceUrl}
                   target="_blank"
