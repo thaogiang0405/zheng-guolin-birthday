@@ -236,7 +236,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
                           decoding="async"
                           referrerPolicy="no-referrer"
                           onError={(event) => { event.currentTarget.style.display = "none"; }}
-                          className={`absolute inset-0 h-full w-full transition duration-700 ${film.id === "moon-2023" ? "object-contain object-center" : "object-cover object-top group-hover:scale-[1.035]"}`}
+                          className={`absolute inset-0 h-full w-full transition duration-700 ${film.id === "moon-2023" ? (imageIndex === 1 ? "object-contain object-center" : "object-cover object-center group-hover:scale-[1.025]") : "object-cover object-top group-hover:scale-[1.035]"}`}
                         />
                       )}
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#131a2c]/35 via-transparent to-transparent" aria-hidden="true" />
