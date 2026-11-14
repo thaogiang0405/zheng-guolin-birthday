@@ -131,7 +131,7 @@ function BirthdayExperience() {
         )}
       </AnimatePresence>
 
-      <main id="main-content" aria-hidden={introOpen}>
+      <main id="main-content" aria-hidden={introOpen} className={introOpen ? "hidden" : undefined}>
         <HeroSection
           locale={locale}
           image={birthdayConfig.media.heroImage}
@@ -215,7 +215,7 @@ function BirthdayExperience() {
         />
       </main>
 
-      <footer className="relative overflow-hidden bg-[#29282C] px-5 py-12 text-center text-[#FFF5E4] sm:px-8">
+      <footer className={`${introOpen ? "hidden" : ""} relative overflow-hidden bg-[#29282C] px-5 py-12 text-center text-[#FFF5E4] sm:px-8`}>
         <FloatingDecorations />
         <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-2 text-sm">
           <p className="font-editorial text-xl italic text-[#F6CE4B]">SUNSHINE FOR GUOLIN</p>
@@ -224,11 +224,11 @@ function BirthdayExperience() {
         </div>
       </footer>
 
-      <MusicPlayer
+      {!introOpen && <MusicPlayer
         labels={t.music}
         title={birthdayConfig.media.musicTitle}
         subtitle={birthdayConfig.media.musicSubtitle}
-      />
+      />}
     </div>
   );
 }

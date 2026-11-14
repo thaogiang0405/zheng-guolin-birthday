@@ -1,5 +1,6 @@
-import { ArrowUpRight, Gift, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Gift, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { StardustField } from "./StardustField";
 import type { Locale } from "../types";
 
 interface BirthdayIntroProps {
@@ -21,64 +22,61 @@ export function BirthdayIntro({ locale, image, labels, onOpen }: BirthdayIntroPr
 
   return (
     <motion.section
-      className="intro-overlay paper-grain fixed inset-0 z-[100] min-h-[100svh] touch-pan-y overflow-x-hidden overflow-y-auto overscroll-contain bg-[#FFF5E4] pb-[max(1.5rem,env(safe-area-inset-bottom))] pl-[max(1.25rem,env(safe-area-inset-left))] pr-[max(1.25rem,env(safe-area-inset-right))] pt-[max(1.25rem,env(safe-area-inset-top))] text-[#29282C] dark:bg-[#1d2028] dark:text-[#FFF5E4]"
+      className="sd-intro"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: reduceMotion ? 1 : 1.03 }}
-      transition={{ duration: reduceMotion ? 0.01 : 0.65 }}
+      exit={{ opacity: 0, scale: reduceMotion ? 1 : 1.015 }}
+      transition={{ duration: reduceMotion ? 0.01 : 0.55 }}
       aria-label={labels.specialDay}
     >
-      <FloatingPaperConfetti />
-      <div className="relative z-10 mx-auto flex min-h-full w-full max-w-6xl flex-col justify-start py-4 sm:py-8 lg:grid lg:min-h-[calc(100svh-2.5rem)] lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-14 lg:py-8">
+      <StardustField variant="intro" />
+      <div className="sd-intro__shell">
         <motion.div
-          initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
+          className="sd-intro__copy"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: reduceMotion ? 0 : 0.1, duration: 0.7 }}
-          className="intro-copy order-2 mt-6 max-w-xl lg:order-1 lg:mt-0"
+          transition={{ delay: reduceMotion ? 0 : 0.13, duration: 0.68 }}
         >
-          <p className="section-kicker text-[#8e682c] dark:text-[#F6CE4B]">{labels.eyebrow}</p>
-          <p className="mt-5 max-w-sm text-xs font-bold uppercase tracking-[0.16em] text-[#8e682c]/70 dark:text-[#FFF0B8]/70 sm:mt-8">{labels.specialDay}</p>
-          <h1 className="font-editorial mt-3 text-[clamp(2.8rem,11vw,7.9rem)] font-semibold leading-[0.84] tracking-[-0.065em]">
-            {labels.headline}
-          </h1>
-          <p className={`mt-4 text-xl font-semibold text-[#b27826] dark:text-[#F6CE4B] sm:mt-5 sm:text-2xl ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.chineseName}</p>
-          <p className={`mt-5 max-w-md text-base leading-8 text-[#29282C]/70 dark:text-[#FFF5E4]/75 sm:mt-7 ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.description}</p>
-
-          <button type="button" onClick={onOpen} className="golden-button intro-gift-button mt-7 max-w-full min-h-[3.25rem] sm:mt-9" aria-label={labels.openGift}>
-            <Gift className="h-4 w-4" aria-hidden="true" />
-            <span className="min-w-0 text-center">{labels.openGift}</span>
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          <div className="sd-intro__eyebrow"><Sparkles size={15} aria-hidden="true" /> {labels.eyebrow}</div>
+          <p className="sd-intro__overline">{labels.specialDay}</p>
+          <h1 className="sd-intro__headline">{labels.headline}</h1>
+          <div className="sd-intro__name">
+            <span className={locale === "zh" ? "font-chinese" : "font-vietnamese"}>{labels.chineseName}</span>
+            <span className="sd-intro__name-star" aria-hidden="true">✧</span>
+          </div>
+          <p className={`sd-intro__description ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.description}</p>
+          <button type="button" onClick={onOpen} className="sd-intro__cta" aria-label={labels.openGift}>
+            <Gift size={19} aria-hidden="true" />
+            <span>{labels.openGift}</span>
+            <ArrowUpRight size={17} aria-hidden="true" />
           </button>
+          <p className="sd-intro__scroll"><ArrowDown size={14} aria-hidden="true" /> Scroll to discover the magic</p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, rotate: reduceMotion ? 0 : 4, scale: reduceMotion ? 1 : 0.96 }}
-          animate={{ opacity: 1, rotate: -2, scale: 1 }}
-          transition={{ delay: reduceMotion ? 0 : 0.18, duration: 0.85, type: "spring", stiffness: 110, damping: 17 }}
-          className="intro-card relative order-1 mx-auto w-[min(72vw,17.5rem)] max-w-full rounded-[1.75rem] border-[11px] border-[#FFFCF6] bg-[#FFFCF6] p-2 sm:w-full sm:max-w-[26rem] lg:order-2 lg:ml-auto lg:mr-0"
+          className="sd-intro__visual"
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 25, scale: reduceMotion ? 1 : 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: reduceMotion ? 0 : 0.18, duration: 0.85 }}
         >
-          <div className="intro-portrait relative aspect-[2/2.38] overflow-hidden rounded-[1.15rem] bg-[#F6CE4B]">
-            <img src={image} alt="Trịnh Quốc Lâm celebrating his birthday with cake" className="h-full w-full object-cover object-[50%_40%]" fetchPriority="high" />
-            <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between p-5 text-[#FFFCF6]">
-              <span className="font-editorial text-2xl italic">Sunshine<br />for Guolin</span>
-              <Sparkles className="h-6 w-6" aria-hidden="true" />
+          <div className="sd-intro__halo" aria-hidden="true" />
+          <div className="sd-orbit sd-orbit--outer" aria-hidden="true" />
+          <div className="sd-orbit sd-orbit--inner" aria-hidden="true" />
+          <span className="sd-visual-star sd-visual-star--top" aria-hidden="true">✦</span>
+          <span className="sd-visual-star sd-visual-star--left" aria-hidden="true">✧</span>
+          <span className="sd-visual-star sd-visual-star--right" aria-hidden="true">✦</span>
+          <div className="sd-intro__frame">
+            <div className="sd-intro__photo">
+              <img src={image} alt="Trịnh Quốc Lâm trong buổi sinh nhật, mặc áo vàng và cầm bánh kem" fetchPriority="high" />
+              <div className="sd-intro__photo-shade" aria-hidden="true" />
+              <div className="sd-intro__photo-label">sunshine <i>for</i> Guolin <span>✧</span></div>
             </div>
           </div>
-          <span className="absolute -left-6 -top-5 h-12 w-12 rounded-full border border-[#A9DDF1] bg-[#FFFCF6]/80" aria-hidden="true" />
-          <span className="absolute -bottom-3 -right-3 h-16 w-16 rounded-full bg-[#A9DDF1]" aria-hidden="true" />
+          <div className="sd-intro__seal" aria-hidden="true">HAPPY<br />DAY <span>✦</span></div>
         </motion.div>
       </div>
+      <span className="sd-intro__corner sd-intro__corner--tl" aria-hidden="true">✧</span>
+      <span className="sd-intro__corner sd-intro__corner--br" aria-hidden="true">✧</span>
     </motion.section>
-  );
-}
-
-function FloatingPaperConfetti() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <span className="floating-star absolute left-[13%] top-[13%] h-3 w-3 rotate-45 bg-[#F6CE4B]" />
-      <span className="floating-star floating-star--slow absolute right-[15%] top-[12%] h-3 w-3 rounded-full bg-[#A9DDF1]" />
-      <span className="floating-star floating-star--fast absolute bottom-[18%] left-[7%] h-4 w-2 rotate-[25deg] rounded-full bg-[#D7AC64]" />
-      <span className="floating-star absolute bottom-[17%] right-[8%] h-3 w-6 rotate-[-35deg] rounded-full bg-[#F6CE4B]" />
-    </div>
   );
 }
