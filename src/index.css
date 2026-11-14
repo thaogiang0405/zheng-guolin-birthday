@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: "DM Sans", "Be Vietnam Pro", "Noto Sans SC", sans-serif;
+  font-family: "Be Vietnam Pro", "DM Sans", "Noto Sans SC", sans-serif;
   color: #29282c;
   background: #fff5e4;
   font-synthesis: none;
