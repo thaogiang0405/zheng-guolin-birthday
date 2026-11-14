@@ -75,8 +75,8 @@ export const featuredFilms: FeaturedFilm[] = [
     ),
     highlight: "03",
     photos: [
-      slot("condor-portrait", "Quách Tĩnh giương cung trong Thần Điêu Đại Hiệp (2014)", "《神雕侠侣》（2014）郭靖弯弓剧照", asset("images/films/condor-portrait.webp")),
-      slot("condor-scene", "Quách Tĩnh giữa trận chiến trong Thần Điêu Đại Hiệp (2014)", "《神雕侠侣》（2014）郭靖战场剧照", asset("images/films/condor-scene.webp")),
+      slot("condor-portrait", "Quách Tĩnh giương cung trong Thần Điêu Đại Hiệp (2014)", "《神雕侠侣》（2014）郭靖弯弓剧照", asset("images/films/condor-portrait.webp") + "?v=quach-tinh-20261114-2"),
+      slot("condor-scene", "Quách Tĩnh giữa trận chiến trong Thần Điêu Đại Hiệp (2014)", "《神雕侠侣》（2014）郭靖战场剧照", asset("images/films/condor-scene.webp") + "?v=quach-tinh-20261114-2"),
     ],
     referenceUrl: "https://ent.sina.com.cn/v/m/2014-12-05/doc-icesifvx0377459.shtml",
   },
