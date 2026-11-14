@@ -170,7 +170,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
     <section
       id="memories"
       aria-labelledby="memories-title"
-      className="relative overflow-hidden bg-cream px-5 py-20 transition-colors duration-500 sm:px-8 sm:py-28 dark:bg-slate-950"
+      className={`relative overflow-hidden bg-cream px-5 py-20 transition-colors duration-500 sm:px-8 sm:py-28 dark:bg-slate-950 ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}
     >
       <div className="pointer-events-none absolute -left-20 top-24 h-64 w-64 rounded-full bg-sunshine/20 blur-3xl dark:bg-sunshine/10" />
       <div className="pointer-events-none absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-sky/35 blur-3xl dark:bg-sky/10" />
@@ -180,7 +180,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#b08b18] dark:text-sunshine">
             {labels.sectionEyebrow}
           </p>
-          <h2 id="memories-title" className="mt-3 font-serif text-4xl font-semibold text-ink sm:text-5xl dark:text-white">
+          <h2 id="memories-title" className={`mt-3 text-4xl font-semibold text-ink sm:text-5xl dark:text-white ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>
             {labels.title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl leading-7 text-ink/65 dark:text-slate-300">
@@ -192,7 +192,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
         {/* Five verified roles: temporary source images where available, styled placeholders elsewhere. */}
         <div className="mb-12 flex flex-col gap-3 border-b border-[#bd9763]/25 pb-7 dark:border-[#e7c990]/20 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="font-editorial text-2xl font-semibold text-[#463323] dark:text-[#ffe6bd] sm:text-3xl">
+            <p className={`text-2xl font-semibold text-[#463323] dark:text-[#ffe6bd] sm:text-3xl ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>
               {locale === "zh" ? "光影中的他" : "Trịnh lão sư trên màn ảnh"}
             </p>
             <p className="mt-2 text-sm leading-7 text-[#6e5e51] dark:text-slate-300">
@@ -244,7 +244,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
               </div>
               <div className="relative z-10 mt-5">
                 <p className="font-chinese text-xs font-semibold tracking-[.08em] text-[#967142] dark:text-[#e4bb79]">{film.title.zh}</p>
-                <h3 className="mt-1 font-editorial text-xl font-semibold leading-snug text-[#29283c] dark:text-[#fff5e4] sm:text-2xl">
+                <h3 className={`mt-1 text-xl font-semibold leading-snug text-[#29283c] dark:text-[#fff5e4] sm:text-2xl ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>
                   {film.title[locale]}
                 </h3>
                 <p className="mt-2 text-xs font-bold uppercase tracking-[.10em] text-[#87613c] dark:text-[#f1d097]">
@@ -265,7 +265,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
         </div>
 
         <div className="mb-10 mt-20 flex flex-col gap-2 border-b border-[#bd9763]/25 pb-7 dark:border-[#e7c990]/20 sm:mt-24">
-          <p className="font-editorial text-2xl font-semibold text-[#463323] dark:text-[#ffe6bd] sm:text-3xl">
+          <p className={`text-2xl font-semibold text-[#463323] dark:text-[#ffe6bd] sm:text-3xl ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>
             {locale === "zh" ? "镜头外的温柔时光" : "Trịnh lão sư của hiện tại"}
           </p>
           <p className="text-sm leading-7 text-[#6e5e51] dark:text-slate-300">
@@ -306,7 +306,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
                         <Maximize2 className="h-4 w-4" aria-hidden="true" />
                       </span>
                     </div>
-                    <p className="mt-4 px-1 font-serif text-lg italic leading-snug text-ink dark:text-white sm:text-xl">
+                    <p className={`mt-4 px-1 text-lg leading-snug text-ink dark:text-white sm:text-xl ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>
                       {item.caption[locale]}
                     </p>
                   </div>
@@ -319,7 +319,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
 
         <div className="mt-7 flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[#bb9b6b]/45 bg-[#fffaf1]/50 px-5 py-10 text-center dark:bg-[#273148]/50">
           <Sparkles size={23} className="text-[#bd9763] dark:text-[#f5cf84]" aria-hidden="true" />
-          <p className="font-editorial text-lg text-[#473c36] dark:text-[#ffe8c6]">
+          <p className={`text-lg text-[#473c36] dark:text-[#ffe8c6] ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>
             {locale === "zh" ? "还有更多温暖的瞬间，等待珍藏…" : "Vẫn còn những khoảnh khắc đẹp đang chờ được lưu giữ…"}
           </p>
           <p className="text-xs text-[#7f705c] dark:text-slate-300">
