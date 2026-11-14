@@ -221,10 +221,12 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
                 ? "relative z-10 grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] grid-rows-2 gap-3"
                 : film.id === "condor-2014"
                 ? "relative z-10 grid grid-cols-1 gap-3"
+                : film.id === "chongzi-2023"
+                ? "relative z-10 grid grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] items-center gap-3"
                 : "relative z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-3"}>
                 {film.photos.map((photo, imageIndex) => (
                   <figure key={photo.id} className={film.id === "moon-2023" && imageIndex === 0 ? "row-span-2 min-w-0" : "min-w-0"}>
-                    <div className={"relative overflow-hidden rounded-xl border border-[#f4e5ca]/70 bg-gradient-to-br " + (index % 3 === 0 ? "from-[#2d384f] via-[#6b5870] to-[#c69d62]" : index % 3 === 1 ? "from-[#334b52] via-[#618078] to-[#e3c39a]" : "from-[#313b58] via-[#82718a] to-[#caa178]") + " " + (film.id === "moon-2023" ? (imageIndex === 0 ? "aspect-[2/3]" : "h-full min-h-[130px]") : film.id === "seven-fairies-2005" ? "aspect-[2/3]" : film.id === "condor-2014" ? "aspect-[3/2]" : "aspect-[4/5]")}>
+                    <div className={"relative overflow-hidden rounded-xl border border-[#f4e5ca]/70 bg-gradient-to-br " + (index % 3 === 0 ? "from-[#2d384f] via-[#6b5870] to-[#c69d62]" : index % 3 === 1 ? "from-[#334b52] via-[#618078] to-[#e3c39a]" : "from-[#313b58] via-[#82718a] to-[#caa178]") + " " + (film.id === "moon-2023" ? (imageIndex === 0 ? "aspect-[2/3]" : "h-full min-h-[130px]") : film.id === "seven-fairies-2005" ? "aspect-[2/3]" : film.id === "condor-2014" ? "aspect-[3/2]" : film.id === "chongzi-2023" ? (imageIndex === 0 ? "aspect-[2/3]" : "aspect-[4/3]") : "aspect-[4/5]")}>
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-2 text-center text-[#fff2d8]" aria-hidden="true">
                         <span className="mb-2 text-3xl opacity-60">✧</span>
                         <span className="font-chinese text-[clamp(0.7rem,2vw,1.1rem)] font-semibold leading-relaxed">{film.character.zh.split(" · ")[0]}</span>
@@ -238,7 +240,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
                           decoding="async"
                           referrerPolicy="no-referrer"
                           onError={(event) => { event.currentTarget.style.display = "none"; }}
-                          className={`absolute inset-0 h-full w-full transition duration-700 ${film.id === "moon-2023" ? (imageIndex === 1 ? "object-contain object-center" : "object-cover object-center group-hover:scale-[1.025]") : film.id === "condor-2014" ? "object-cover object-center group-hover:scale-[1.025]" : "object-cover object-top group-hover:scale-[1.035]"}`}
+                          className={`absolute inset-0 h-full w-full transition duration-700 ${film.id === "moon-2023" ? (imageIndex === 1 ? "object-contain object-center" : "object-cover object-center group-hover:scale-[1.025]") : film.id === "condor-2014" ? "object-cover object-center group-hover:scale-[1.025]" : film.id === "chongzi-2023" ? "object-cover object-center group-hover:scale-[1.025]" : "object-cover object-top group-hover:scale-[1.035]"}`}
                         />
                       )}
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#131a2c]/35 via-transparent to-transparent" aria-hidden="true" />
