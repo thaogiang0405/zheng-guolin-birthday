@@ -1,4 +1,5 @@
 import type { LocalizedText } from "../types";
+import { asset } from "./birthdayConfig";
 
 /**
  * The five roles selected for the birthday tribute.
@@ -19,7 +20,7 @@ export interface FeaturedFilm {
   character: LocalizedText;
   description: LocalizedText;
   highlight: string;
-  photos: [FilmPhoto, FilmPhoto];
+  photos: FilmPhoto[];
   referenceUrl: string;
 }
 
@@ -101,13 +102,14 @@ export const featuredFilms: FeaturedFilm[] = [
     title: local("Trường Nguyệt Tẫn Minh", "长月烬明"),
     character: local("Cù Huyền Tử", "衢玄子"),
     description: local(
-      "Mái tóc bạc và phong thái điềm tĩnh tạo nên một vị chưởng môn đầy tiên khí, khiến người xem lưu luyến.",
-      "一袭白发，气度沉静，衢玄子的仙风道骨令人过目难忘。",
+      "Mái tóc bạc, phong thái điềm tĩnh cùng khí chất tiên phong đạo cốt đã tạo nên một Cù Huyền Tử thật sự khó quên. Không quá phô trương, nhưng từng ánh mắt, từng cử chỉ đều toát lên vẻ thanh lãnh, uy nghiêm và cuốn hút rất riêng. Đây cũng là một trong những tạo hình khiến người xem chỉ cần nhìn lại là lập tức rung động.",
+      "一袭白发，气度沉静，仙风道骨的衢玄子，真的让人过目难忘。无需太多张扬，仅仅是一个眼神、一个举止，便足以展现出那份清冷、威严与独特的吸引力。也是那种让人只要再看一眼，就会再次心动的角色。",
     ),
     highlight: "05",
     photos: [
-      slot("moon-portrait", "Trịnh Quốc Lâm vai Cù Huyền Tử trong Trường Nguyệt Tẫn Minh (2023)", "郑国霖饰演衢玄子，《长月烬明》(2023)", "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/882b029b74cb4641a76e52ae44fe5a62.jpg"),
-      slot("moon-scene", "Phân cảnh Cù Huyền Tử trong Trường Nguyệt Tẫn Minh (2023)", "《长月烬明》衢玄子剧情照（2023）", "https://p0.itc.cn/images01/20230511/c6ea8236688c43e5a44a17e7f330a413.jpeg"),
+      slot("moon-portrait", "Cù Huyền Tử mặc áo trắng, tạo hình toàn thân cổ trang", "衢玄子白衣古装全身造型", asset("images/films/moon-portrait.webp")),
+      slot("moon-tea", "Cù Huyền Tử ngồi uống trà trong ánh nến", "衢玄子在烛光下品茶", asset("images/films/moon-tea.webp")),
+      slot("moon-action", "Cù Huyền Tử trong phân cảnh thần thái uy nghiêm", "衢玄子气势凛然的剧照", asset("images/films/moon-action.webp")),
     ],
     referenceUrl: "https://wapbaike.baidu.com/item/%E9%95%BF%E6%9C%88%E7%83%AC%E6%98%8E/59071327",
   },
