@@ -75,8 +75,8 @@ export const featuredFilms: FeaturedFilm[] = [
     ),
     highlight: "03",
     photos: [
-      slot("condor-portrait", "Trịnh Quốc Lâm trong vai Quách Tĩnh, Thần Điêu Đại Hiệp (2014)", "郑国霖饰演郭靖，《神雕侠侣》(2014)", "https://k.sinaimg.cn/n/sinacn20200203ac/116/w550h366/20200203/6ba9-inzcrxr8310355.jpg/w700d1q75cms.jpg"),
-      slot("condor-scene", "Chỗ đặt ảnh phân cảnh Quách Tĩnh (2014)", "郭靖（2014）剧情照片待补"),
+      slot("condor-portrait", "Quách Tĩnh giương cung trong Thần Điêu Đại Hiệp (2014)", "《神雕侠侣》（2014）郭靖弯弓剧照", asset("images/films/condor-portrait.webp")),
+      slot("condor-scene", "Quách Tĩnh giữa trận chiến trong Thần Điêu Đại Hiệp (2014)", "《神雕侠侣》（2014）郭靖战场剧照", asset("images/films/condor-scene.webp")),
     ],
     referenceUrl: "https://ent.sina.com.cn/v/m/2014-12-05/doc-icesifvx0377459.shtml",
   },
