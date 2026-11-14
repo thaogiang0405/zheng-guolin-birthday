@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Locale } from "../types";
+import { StardustField } from "./StardustField";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,8 +44,9 @@ export function HeroSection({ locale, image, labels }: HeroSectionProps) {
   }, [reduceMotion]);
 
   return (
-    <section ref={sectionRef} className="section-shell paper-grain relative overflow-hidden bg-[#FFF5E4] transition-colors duration-500 dark:bg-[#1d2028]" id="sunshine">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-20">
+    <section ref={sectionRef} className="section-shell sd-hero relative overflow-hidden transition-colors duration-500" id="sunshine">
+      <StardustField variant="hero" />
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:items-center lg:gap-20">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,22 +55,22 @@ export function HeroSection({ locale, image, labels }: HeroSectionProps) {
           className="relative z-10 order-2 lg:order-1"
         >
           <p className="section-kicker">{labels.eyebrow}</p>
-          <h2 className={`font-editorial mt-7 text-[clamp(3.45rem,8vw,7.2rem)] font-semibold leading-[0.86] tracking-[-0.06em] text-[#29282C] dark:text-[#FFF5E4] ${locale === "zh" ? "font-chinese tracking-[-0.04em]" : ""}`}>
+          <h2 className={`font-editorial sd-hero__headline mt-7 text-[clamp(3.45rem,8vw,7.2rem)] font-semibold leading-[0.91] tracking-[-0.06em] ${locale === "zh" ? "font-chinese tracking-[-0.04em]" : ""}`}>
             <span className="block">{labels.titleLineOne}</span>
-            <span className="block text-[#D7AC64]">{labels.titleLineTwo}</span>
+            <span className="block sd-hero__gold">{labels.titleLineTwo}</span>
           </h2>
-          <p className={`mt-8 max-w-md text-base leading-8 text-[#29282C]/70 dark:text-[#FFF5E4]/72 ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.body}</p>
+          <p className={`mt-8 max-w-md text-base leading-8 text-[#FFF5E4]/75 ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.body}</p>
 
           <div className="mt-9 flex flex-wrap gap-x-5 gap-y-3">
             {labels.warmWords.map((word, index) => (
-              <span key={word} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8e682c] dark:text-[#FFF0B8]">
+              <span key={word} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#F2D58A]">
                 {index % 2 === 0 ? <Star className="h-3.5 w-3.5 fill-[#F6CE4B] text-[#F6CE4B]" /> : <Sparkles className="h-3.5 w-3.5 text-[#7DB9D5]" />}
                 {word}
               </span>
             ))}
           </div>
 
-          <a href="#moments" className="outline-button mt-10 w-fit border-[#29282C]/35 text-[#29282C] dark:border-[#FFF5E4]/40 dark:text-[#FFF5E4]">
+          <a href="#moments" className="outline-button mt-10 w-fit border-[#F2D58A]/45 text-[#FFF5E4]">
             {labels.scroll}<ArrowDown className="h-4 w-4" aria-hidden="true" />
           </a>
         </motion.div>
@@ -80,9 +82,9 @@ export function HeroSection({ locale, image, labels }: HeroSectionProps) {
           transition={{ duration: reduceMotion ? 0.01 : 0.8, delay: 0.08 }}
           className="relative order-1 mx-auto w-full max-w-[38rem] lg:order-2 lg:ml-auto"
         >
-          <span className="absolute -left-8 top-[8%] h-28 w-28 rounded-full border border-[#F6CE4B]/80" aria-hidden="true" />
-          <span className="absolute -right-5 bottom-[9%] h-24 w-24 rounded-full bg-[#A9DDF1]/70" aria-hidden="true" />
-          <div className="hero-parallax-image relative aspect-[4/5] overflow-hidden rounded-[2.25rem] bg-[#F6CE4B] shadow-soft">
+          <div className="sd-hero__ring" aria-hidden="true" />
+          <span className="sd-visual-star sd-hero__sparkle" aria-hidden="true">✦</span>
+          <div className="hero-parallax-image sd-hero__portrait relative aspect-[4/5] overflow-hidden rounded-[2.25rem] bg-[#F6CE4B] shadow-soft">
             <img src={image} alt="Trịnh Quốc Lâm wearing a yellow shirt and holding a birthday cake" className="h-[112%] w-full -translate-y-[4%] object-cover object-[50%_40%]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#29282C]/35 via-transparent to-transparent" />
             <span className="absolute bottom-7 left-7 font-editorial text-4xl italic text-[#FFFCF6] sm:text-5xl">our<br />sunshine</span>
