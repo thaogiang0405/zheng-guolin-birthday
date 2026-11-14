@@ -86,13 +86,13 @@ export const featuredFilms: FeaturedFilm[] = [
     title: local("Trọng Tử", "重紫"),
     character: local("Trác Diệu · Cung chủ Thanh Hoa Cung", "卓耀 · 青华宫宫主"),
     description: local(
-      "Trác Diệu để lại dấu ấn bởi khí chất uy nghiêm, cùng những tình cảm sâu sắc phía sau dáng vẻ ấy.",
-      "卓耀的威严气度之下，也藏着令人动容的深情。",
+      "Trác Diệu mang đến một cảm giác vừa trầm tĩnh, vừa day dứt, khiến người xem rất khó quên. Ẩn sau vẻ ngoài điềm đạm và khí chất lạnh lùng là những cảm xúc sâu sắc cùng nội tâm nhiều giằng xé. Chính sự kết hợp ấy đã tạo nên một nhân vật có sức hút rất riêng, càng nhìn lại càng thấy thương và nhớ.",
+      "卓耀这个角色，既沉静克制，又带着令人心疼的复杂情绪，让人很难忘记。看似冷静淡然的外表之下，其实藏着很深的情感与挣扎。也正因为如此，卓耀才会有一种越回望、越让人心动与惦念的独特魅力。",
     ),
     highlight: "04",
     photos: [
-      slot("chongzi-portrait", "Ảnh tạo hình Trịnh Quốc Lâm vai Trác Diệu trong Trọng Tử (2023)", "郑国霖饰演卓耀，《重紫》(2023)定妆照", "https://k.sinaimg.cn/n/sinakd20210830ac/301/w484h617/20210830/3101-0c2cc34df3108f86f131c81ae9d93c1c.jpg/w700d1q75cms.jpg"),
-      slot("chongzi-scene", "Chỗ đặt ảnh phân cảnh Trác Diệu trong Trọng Tử (2023)", "《重紫》卓耀（2023）剧情照片待补"),
+      slot("chongzi-portrait", "Trác Diệu trong trang phục áo xanh lá, tạo hình nghiêng trong Trọng Tử (2023)", "《重紫》（2023）卓耀身穿青绿色长袍的侧面剧照", asset("images/films/chongzi-portrait.webp")),
+      slot("chongzi-scene", "Trác Diệu biểu cảm xúc động trong trang phục áo xanh lam, Trọng Tử (2023)", "《重紫》（2023）卓耀身穿蓝袍的情绪特写", asset("images/films/chongzi-scene.webp")),
     ],
     referenceUrl: "https://bkso.baidu.com/item/%E9%87%8D%E7%B4%AB/18814284",
   },
