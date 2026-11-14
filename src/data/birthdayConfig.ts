@@ -127,10 +127,10 @@ export const birthdayConfig: BirthdayConfig = {
         rotation: "-1.1deg"
       }
     ],
-    // Add optional user-provided/licensed local music later, for example: asset("music/birthday-melody.mp3").
-    musicPath: undefined,
+    // User-provided local background music, served from public/music/.
+    musicPath: asset("music/birthday-melody.mp3"),
     musicTitle: "Sunshine for Guolin",
-    musicSubtitle: "Add your licensed MP3",
+    musicSubtitle: "birthday-melody.mp3",
     // Add only user-provided or licensed local sound files, for example: asset("music/gift-open.mp3").
     soundEffects: {
       gift: undefined,
