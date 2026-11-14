@@ -122,7 +122,7 @@ function BirthdayExperience() {
               eyebrow: t.intro.eyebrow,
               specialDay: t.intro.specialDay,
               headline: t.intro.birthdayHeadline,
-              chineseName: birthdayConfig.person.names[locale],
+              chineseName: t.intro.title,
               description: t.intro.dearSubheading,
               openGift: t.intro.enter,
             }}
