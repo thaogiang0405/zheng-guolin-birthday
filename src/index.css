@@ -527,3 +527,40 @@ body { overflow-y: auto; touch-action: pan-y; }
 @media (prefers-reduced-motion: reduce) {
   .sd-star,.sd-cross,.sd-shooting,.sd-orbit,.sd-visual-star,.sd-intro__halo,.sd-intro__cta::before { animation: none !important; }
 }
+
+
+/* ======================================================
+   Contrast repair — light cream / dark navy theme pairing
+   The Golden Stardust ID backgrounds previously overrode
+   Tailwind dark-mode backgrounds, leaving white-on-cream.
+   ====================================================== */
+.dark #memories {
+  background:
+    radial-gradient(ellipse at 18% 12%, rgba(65, 80, 117, .46), transparent 47%),
+    radial-gradient(ellipse at 88% 73%, rgba(173, 132, 67, .14), transparent 49%),
+    #151d30;
+}
+
+.dark #letter {
+  background:
+    radial-gradient(ellipse at 80% 23%, rgba(83, 79, 109, .38), transparent 50%),
+    radial-gradient(ellipse at 14% 82%, rgba(185, 132, 63, .13), transparent 40%),
+    #191b2c;
+}
+
+/* Readable editorial headings and secondary copy in both themes. */
+#memories #memories-title { color: #28283a; }
+.dark #memories #memories-title { color: #fff7e9; }
+#memories header > p:last-child { color: #63594e; }
+.dark #memories header > p:last-child { color: #cdd7ed; }
+#letter h2 { color: #29283c; }
+.dark #letter h2 { color: #fff5e4; }
+#letter .section-kicker { color: #85602d; }
+.dark #letter .section-kicker { color: #f5d491; }
+.sd-hero .section-kicker { color: #f2d58a; }
+
+@media (prefers-contrast: more) {
+  .dark #memories #memories-title,
+  .dark #letter h2 { color: #fff !important; }
+  .dark #memories header > p:last-child { color: #f0f3ff !important; }
+}
