@@ -113,7 +113,7 @@ export default function WishWall({ locale, maxLength, labels }: WishWallProps) {
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.26em] text-[#5d9bb5] dark:text-[#A9DDF1]">
             {labels.eyebrow}
           </p>
-          <h2 id="wish-wall-title" className="font-editorial text-4xl font-semibold text-ink dark:text-[#FFF5E4] sm:text-5xl">
+          <h2 id="wish-wall-title" className={`text-4xl font-semibold text-ink dark:text-[#FFF5E4] sm:text-5xl ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>
             {labels.title}
           </h2>
           <p className="mt-5 text-base leading-8 text-ink/70 dark:text-[#FFF5E4]/70 sm:text-lg">{labels.body}</p>
