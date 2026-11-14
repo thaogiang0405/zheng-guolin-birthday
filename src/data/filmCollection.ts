@@ -74,7 +74,7 @@ export const featuredFilms: FeaturedFilm[] = [
     ),
     highlight: "03",
     photos: [
-      slot("condor-portrait", "Chỗ đặt chân dung Quách Tĩnh (2014)", "郭靖（2014）角色肖像待补"),
+      slot("condor-portrait", "Trịnh Quốc Lâm trong vai Quách Tĩnh, Thần Điêu Đại Hiệp (2014)", "郑国霖饰演郭靖，《神雕侠侣》(2014)", "https://k.sinaimg.cn/n/sinacn20200203ac/116/w550h366/20200203/6ba9-inzcrxr8310355.jpg/w700d1q75cms.jpg"),
       slot("condor-scene", "Chỗ đặt ảnh phân cảnh Quách Tĩnh (2014)", "郭靖（2014）剧情照片待补"),
     ],
     referenceUrl: "https://ent.sina.com.cn/v/m/2014-12-05/doc-icesifvx0377459.shtml",
@@ -106,7 +106,7 @@ export const featuredFilms: FeaturedFilm[] = [
     ),
     highlight: "05",
     photos: [
-      slot("chongzi-portrait", "Chỗ đặt chân dung Trác Diệu trong Trọng Tử (2023)", "《重紫》卓耀（2023）角色肖像待补"),
+      slot("chongzi-portrait", "Ảnh tạo hình Trịnh Quốc Lâm vai Trác Diệu trong Trọng Tử (2023)", "郑国霖饰演卓耀，《重紫》(2023)定妆照", "https://k.sinaimg.cn/n/sinakd20210830ac/301/w484h617/20210830/3101-0c2cc34df3108f86f131c81ae9d93c1c.jpg/w700d1q75cms.jpg"),
       slot("chongzi-scene", "Chỗ đặt ảnh phân cảnh Trác Diệu trong Trọng Tử (2023)", "《重紫》卓耀（2023）剧情照片待补"),
     ],
     referenceUrl: "https://zh.wikipedia.org/wiki/%E9%87%8D%E7%B4%AB",
