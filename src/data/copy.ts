@@ -147,13 +147,13 @@ export const copy: Record<Locale, SiteCopy> = {
     },
     intro: {
       eyebrow: "SUNSHINE FOR GUOLIN",
-      title: "Dành riêng cho Quốc Lâm",
-      description: "Một hành trình nhỏ được thắp lên bằng những điều dịu dàng và những khoảnh khắc đáng nhớ.",
-      enter: "Mở món quà sinh nhật ✨",
-      enterAria: "Mở món quà sinh nhật dành cho Quốc Lâm",
-      specialDay: "MỘT NGÀY ĐẶC BIỆT CHO MỘT NGƯỜI ĐẶC BIỆT",
+      title: "Trịnh lão sư · 郑老师",
+      description: "Một món quà nhỏ gửi đến Trịnh lão sư, bằng tất cả yêu thương.",
+      enter: "Mở món quà dành cho thầy ✨",
+      enterAria: "Mở món quà sinh nhật dành cho Trịnh lão sư",
+      specialDay: "MỘT NGÀY ĐẶC BIỆT DÀNH CHO TRỊNH LÃO SƯ",
       birthdayHeadline: "HAPPY BIRTHDAY",
-      dearSubheading: "Guolin thân mến, thế giới dường như ấm áp hơn một chút khi có anh trong đó."
+      dearSubheading: "Mong tuổi mới của Trịnh lão sư thật nhiều sức khỏe, bình an và những niềm vui giản dị. Mong mỗi ngày đều có điều khiến thầy mỉm cười."
     },
     hero: {
       eyebrow: "CHÚC MỪNG SINH NHẬT",
@@ -267,13 +267,13 @@ export const copy: Record<Locale, SiteCopy> = {
     },
     intro: {
       eyebrow: "SUNSHINE FOR GUOLIN",
-      title: "献给国霖",
-      description: "一段由温柔与珍贵瞬间点亮的小小旅程。",
-      enter: "打开生日礼物 ✨",
-      enterAria: "打开献给国霖的生日礼物",
-      specialDay: "献给特别之人的特别一天",
+      title: "郑老师",
+      description: "满载心意，送给郑老师的一份小小生日礼物。",
+      enter: "开启这份生日惊喜 ✨",
+      enterAria: "打开献给郑老师的生日礼物",
+      specialDay: "把今天的美好，都送给郑老师",
       birthdayHeadline: "HAPPY BIRTHDAY",
-      dearSubheading: "亲爱的国霖，因为有你，世界仿佛多了一点温暖。"
+      dearSubheading: "愿郑老师新的一岁平安健康，常有欢喜，所遇皆温柔。愿每一天都有值得微笑的小美好。"
     },
     hero: {
       eyebrow: "生日快乐",
