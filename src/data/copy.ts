@@ -47,6 +47,7 @@ export interface SiteCopy {
     exploreAria: string;
     titleLineOne: string;
     titleLineTwo: string;
+    editorialSubtitle: string;
     editorialBody: string;
     chineseAccent: string;
     warmWords: string[];
@@ -169,7 +170,8 @@ export const copy: Record<Locale, SiteCopy> = {
       exploreAria: "Cuộn đến những khoảnh khắc sinh nhật",
       titleLineOne: "ANOTHER YEAR,",
       titleLineTwo: "STILL OUR SUNSHINE.",
-      editorialBody: "A LITTLE SUNSHINE, A LOT OF LOVE. Một chút ánh nắng, thật nhiều yêu thương — dành cho nụ cười luôn làm mọi khoảnh khắc trở nên ấm áp hơn.",
+      editorialSubtitle: "Thêm một tuổi mới, vẫn là ánh nắng ấm áp trong lòng chúng em.",
+      editorialBody: "Có những người chẳng cần làm điều gì quá lớn lao, chỉ một nụ cười hay một khoảnh khắc giản dị cũng đủ khiến người khác cảm thấy ấm áp.\n\nCảm ơn Trịnh lão sư vì đã luôn mang đến những điều đẹp đẽ ấy. Mong rằng trong hành trình phía trước, thầy cũng sẽ nhận lại thật nhiều yêu thương và hạnh phúc.",
       chineseAccent: "生日快乐",
       warmWords: ["Ấm áp", "Niềm vui", "Kỷ niệm", "Mãi mãi"]
     },
@@ -289,7 +291,8 @@ export const copy: Record<Locale, SiteCopy> = {
       exploreAria: "滚动查看生日瞬间",
       titleLineOne: "ANOTHER YEAR,",
       titleLineTwo: "STILL OUR SUNSHINE.",
-      editorialBody: "A LITTLE SUNSHINE, A LOT OF LOVE. 一点阳光，很多很多爱——献给那个总能让每个瞬间变得温暖的人。",
+      editorialSubtitle: "又长大一岁，您依然是我们心中温暖的阳光。",
+      editorialBody: "有些人不需要做什么惊天动地的事，仅仅一个微笑、一个平凡的瞬间，就足以让人感到温暖。\n\n谢谢郑老师一直以来带给我们的美好。愿未来的日子里，您也能收获满满的爱与幸福。",
       chineseAccent: "生日快乐",
       warmWords: ["温暖", "快乐", "回忆", "永远"]
     },
