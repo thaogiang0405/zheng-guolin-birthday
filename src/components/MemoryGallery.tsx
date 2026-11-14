@@ -218,7 +218,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
                 <span className="rounded-full border border-[#cba86f]/35 bg-[#f2e3c8]/70 px-3 py-1 text-xs font-bold tracking-[.12em] text-[#705336] dark:bg-[#cba86f]/10 dark:text-[#f2d7a9]">{film.year}</span>
               </div>
               <div className={film.id === "moon-2023"
-                ? "relative z-10 grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] grid-rows-2 gap-3"
+                ? "relative z-10 grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] grid-rows-2 gap-3"
                 : "relative z-10 grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-3"}>
                 {film.photos.map((photo, imageIndex) => (
                   <figure key={photo.id} className={film.id === "moon-2023" && imageIndex === 0 ? "row-span-2 min-w-0" : "min-w-0"}>
@@ -236,7 +236,7 @@ export function MemoryGallery({ items, locale, labels }: MemoryGalleryProps) {
                           decoding="async"
                           referrerPolicy="no-referrer"
                           onError={(event) => { event.currentTarget.style.display = "none"; }}
-                          className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.035]"
+                          className={`absolute inset-0 h-full w-full transition duration-700 ${film.id === "moon-2023" ? "object-contain object-center" : "object-cover object-top group-hover:scale-[1.035]"}`}
                         />
                       )}
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#131a2c]/35 via-transparent to-transparent" aria-hidden="true" />
