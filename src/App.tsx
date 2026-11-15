@@ -198,7 +198,7 @@ function BirthdayExperience() {
             placeholder: t.wishes.inputPlaceholder,
             submit: t.wishes.submit,
             empty: t.wishes.empty,
-            note: `${t.wishes.limit.replace("{max}", String(birthdayConfig.wishes.maxLength))} · ${locale === "zh" ? "仅保存在当前浏览器" : "Chỉ lưu trên trình duyệt của bạn"}`,
+            note: locale === "zh" ? "公开来信需登录 GitHub 发布" : "Thư công khai cần đăng nhập GitHub để đăng",
           }}
         />
 
