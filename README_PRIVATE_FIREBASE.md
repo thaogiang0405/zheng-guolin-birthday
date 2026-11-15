@@ -1,6 +1,6 @@
 # Thiết lập Firebase cho hộp thư bí mật / Firebase 私密信箱
 
-Website hiện đã có giao diện **fan gửi thư → phong thư niêm phong → người nhận mở sau lá thư chính**, nhưng chưa thể kết nối dữ liệu thật cho đến khi bạn thêm cấu hình dự án Firebase.
+Website đã có giao diện **fan gửi tên + lời chúc → phong thư tự niêm phong → những phong thư nhỏ nằm ngay BÊN TRONG lá thư lớn**. Khi người nhận mở lá thư lớn bằng mã `2705520`, khu phong thư nhỏ hiện ra tại cuối nội dung; sau khi xác thực tài khoản Firebase được cấp quyền thì các phong thư sẽ hiện **tên người gửi**, nhấp vào từng phong bì để đọc. Chưa thể gửi/đọc dữ liệu thật cho đến khi bạn kết nối Firebase.
 
 **Hệ lưu trữ đã chuẩn bị trong code: Cloud Firestore**. Nếu Firebase bạn tạo là **Realtime Database** (không phải Cloud Firestore), đừng dán nhầm bộ Rules này. Hãy chuyển adapter `src/services/privateLetters.ts` sang Realtime Database trước khi bật gửi.
 
@@ -29,7 +29,7 @@ Trong **Firestore Database → Rules**:
 4. Nhấn **Publish** sau khi đọc và kiểm tra kỹ.
 
 **Ý nghĩa:**
-- Fan đăng nhập ẩn danh chỉ được **CREATE** thư mới (không được list/get/update/delete).
+- Fan nhập đúng **hai thông tin: tên/biệt danh và lời chúc (tối đa 500 ký tự)**. Ứng dụng tự thêm `senderUid` kỹ thuật để xác thực và chống sửa thư; fan ẩn danh chỉ được **CREATE** mới (không được list/get/update/delete).
 - Tài khoản người nhận có **UID chính xác** mới được **GET/LIST** tất cả thư.
 - **Mật khẩu trang `2705520` chỉ là khóa giao diện**; không quyết định quyền đọc Firebase. Dù ai biết mã này thì vẫn không thể đọc thư nếu không đăng nhập đúng tài khoản và không được Rules cấp quyền.
 - Người quản trị Firebase, dựa trên quyền truy cập quản lý dự án, vẫn có thể quản trị nội dung. Đây không phải mã hóa đầu-cuối.
@@ -64,10 +64,10 @@ Tạo `.env.local` từ `.env.example`, điền hai giá trị, sau đó chạy 
 
 ## 4. Kiểm thử 4 tình huống
 
-1. **Fan thường**: mở web không cần nhập mật khẩu; viết thư, gửi; chỉ khi server xác nhận ghi dữ liệu thành công mới thấy phong bì gấp và niêm phong.
+1. **Fan thường**: mở web không cần nhập mật khẩu; nhập tên và lời chúc, gửi; chỉ khi server xác nhận ghi dữ liệu thành công mới thấy phong bì gấp và niêm phong.
 2. **Fan khác**: không có danh sách, không có nút mở thư và không thể tải nội dung bằng Firestore REST.
-3. **Người nhận**: nhập `2705520` ở lá thư chính, đi tới hộp thư nhỏ, đăng nhập email/mật khẩu Firebase được cấp quyền; những phong thư mới hiển thị để lần lượt mở đọc.
-4. **Niêm phong lại**: bấm đóng thư chính hoặc đăng xuất sẽ ẩn mọi nội dung riêng trong giao diện, xóa phiên đăng nhập khỏi bộ nhớ của trang (không lưu mật khẩu).
+3. **Người nhận**: nhập `2705520` ở lá thư chính; **ngay bên dưới nội dung thư lớn** sẽ có những phong thư nhỏ. Người nhận xác thực tài khoản Firebase ngay trong phần đó, danh sách phong bì **kèm tên fan** xuất hiện; nhấp từng phong bì để đọc.
+4. **Niêm phong lại**: bấm đóng thư chính hoặc đăng xuất sẽ ẩn toàn bộ nội dung nhỏ và xóa phiên đọc khỏi bộ nhớ tạm của trang (không lưu mật khẩu).
 
 ## 5. Lưu ý vận hành và chống spam
 
