@@ -1171,3 +1171,150 @@ body { overflow-y: auto; touch-action: pan-y; }
   .cake-cosmos__small-star,.cake-cosmos__candle--lit .cake-cosmos__flame,.cake-cosmos__smoke i,.cake-cosmos--blowing::after { animation:none !important; }
   .cake-cosmos__cake,.cake-cosmos__aura { transition:none !important; }
 }
+
+
+/* ===== Private Firebase mailbox: fan sends, only recipient reads ===== */
+#main-content #wishes.sealed-mail-section {
+  padding-block:clamp(5.5rem,9vw,9rem);
+  color:#fff1dc;
+  background:
+    radial-gradient(ellipse 43% 39% at 15% 23%,rgba(166,112,131,.28),transparent 72%),
+    radial-gradient(ellipse 43% 40% at 89% 76%,rgba(188,146,83,.19),transparent 75%),
+    linear-gradient(148deg,#11192e,#1e213b 52%,#151b2d);
+}
+.sealed-mail-section .sd-field { z-index:0; opacity:.38; }
+.sealed-mail-composer {
+  padding:clamp(1.4rem,3.5vw,2.7rem);
+  border:1px solid rgba(241,208,163,.78);
+  border-radius:1.9rem;
+  background:
+    radial-gradient(ellipse at 0 0,rgba(255,255,255,.94),transparent 43%),
+    linear-gradient(135deg,#fff9ea,#f6e5c8 80%,#efddc4);
+  box-shadow:0 32px 85px rgba(1,7,25,.37),0 0 0 8px rgba(236,196,133,.05),inset 0 0 0 4px rgba(181,123,59,.05);
+}
+.sealed-mail-textarea {
+  background-image:repeating-linear-gradient(transparent 0,transparent 30px,rgba(190,152,111,.12) 30px,rgba(190,152,111,.12) 31px);
+  background-position:0 13px;
+}
+.sealed-mail-submit {
+  border:1px solid rgba(255,245,217,.5);
+  color:#392816;
+  background:linear-gradient(105deg,#fff1cb,#dfb67c 51%,#f5ddaa);
+  box-shadow:0 12px 27px rgba(157,99,40,.18),inset 0 1px rgba(255,255,255,.54);
+  transition:transform .2s,box-shadow .2s;
+}
+.sealed-mail-submit:not(:disabled):hover { transform:translateY(-2px); box-shadow:0 16px 30px rgba(157,99,40,.26); }
+.sealed-mail-submit:focus-visible { outline:3px solid #b88f55; outline-offset:3px; }
+.sealed-mail-envelope {
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:min(100%,265px);
+  aspect-ratio:1.48;
+  border-radius:13px;
+  border:2px solid #fff3db;
+  background:linear-gradient(155deg,#fff4d8,#eac38c);
+  color:#956b40;
+  box-shadow:0 30px 50px rgba(93,58,20,.22),inset 0 0 0 5px rgba(255,255,255,.25);
+  transform-origin:center bottom;
+}
+.sealed-mail-envelope::after { content:""; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(160deg,transparent 50%,rgba(192,143,80,.34) 51%,transparent 75%); clip-path:polygon(0 100%,0 28%,50% 73%,100% 28%,100% 100%); pointer-events:none; }
+.sealed-mail-envelope__wax {
+  position:absolute;
+  z-index:2;
+  top:52%;
+  left:50%;
+  display:grid;
+  place-items:center;
+  width:56px;
+  height:56px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:3px double rgba(252,234,191,.94);
+  background:linear-gradient(130deg,#d6a357,#a97137);
+  color:#fff4d6;
+  font-size:22px;
+  box-shadow:0 9px 17px rgba(102,58,27,.24);
+}
+.sealed-mail-vault {
+  padding:clamp(1.5rem,3.5vw,2.6rem);
+  border:1px solid rgba(240,202,145,.32);
+  border-radius:1.9rem;
+  background:linear-gradient(147deg,rgba(253,235,200,.11),rgba(253,235,200,.03));
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 30px 85px rgba(1,6,24,.27),inset 0 1px rgba(255,255,255,.1);
+}
+.sealed-mail-vault__preview {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(10px,2vw,18px);
+  padding:clamp(25px,5vw,36px) 10px 25px;
+  max-width:450px;
+  margin:0 auto;
+  perspective:950px;
+}
+.sealed-mail-mini {
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-width:0;
+  aspect-ratio:1.35;
+  border:1px solid rgba(255,246,218,.66);
+  border-radius:9px;
+  background:linear-gradient(145deg,#f7e5c4,#cfa778);
+  color:#986c48;
+  box-shadow:0 13px 24px rgba(0,3,18,.2),inset 0 0 0 3px rgba(255,251,233,.18);
+  transform:rotate(var(--mini-rotate,0));
+  animation:sealed-mail-float 5s ease-in-out infinite;
+}
+.sealed-mail-mini:nth-child(2n) { background:linear-gradient(135deg,#fff1d8,#e4bb95); }
+.sealed-mail-mini:nth-child(3n) { background:linear-gradient(145deg,#faf0df,#e1cfb4); }
+.sealed-mail-mini:nth-child(2) { --mini-rotate:7deg; animation-delay:-1s; }
+.sealed-mail-mini:nth-child(3) { --mini-rotate:-4deg; animation-delay:-2s; }
+.sealed-mail-mini:nth-child(4) { --mini-rotate:4deg; animation-delay:-3s; }
+.sealed-mail-mini:nth-child(5) { --mini-rotate:-7deg; animation-delay:-1.8s; }
+.sealed-mail-mini:nth-child(6) { --mini-rotate:5deg; animation-delay:-2.5s; }
+.sealed-mail-mini:nth-child(7) { --mini-rotate:-5deg; grid-column:2; animation-delay:-3.4s; }
+.sealed-mail-mini__wax {
+  position:absolute;
+  top:58%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  border:2px double rgba(255,236,206,.83);
+  border-radius:50%;
+  background:#b4824b;
+  color:#fff0cf;
+  font-size:12px;
+}
+.sealed-mail-login {
+  border:1px solid rgba(255,238,202,.55);
+  color:#392819;
+  background:linear-gradient(110deg,#ffeed0,#d9ac76 51%,#f6e2b6);
+  transition:transform .2s;
+}
+.sealed-mail-login:not(:disabled):hover { transform:translateY(-2px); }
+.sealed-mail-reader {
+  padding:5px 15px;
+  border:1px solid rgba(234,207,158,.92);
+  border-radius:13px;
+  background:linear-gradient(145deg,#fffaf0,#f2dfbe);
+  box-shadow:0 12px 25px rgba(4,8,23,.22);
+}
+.sealed-mail-reader__icon { display:grid; place-items:center; width:45px; height:45px; flex-shrink:0; color:#b28047; background:rgba(203,161,98,.19); border-radius:12px; }
+@keyframes sealed-mail-float {
+  0%,100% { transform:translateY(0) rotate(var(--mini-rotate,0)); }
+  50% { transform:translateY(-7px) rotate(var(--mini-rotate,0)); }
+}
+@media (max-width:480px) {
+  .sealed-mail-vault,.sealed-mail-composer { border-radius:1.4rem; }
+  .sealed-mail-vault__preview { padding-inline:0; }
+  .sealed-mail-mini { border-radius:6px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .sealed-mail-mini { animation:none !important; }
+}
