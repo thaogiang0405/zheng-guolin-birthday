@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "fanLetters": {
+      ".read": "auth != null && auth.uid === 'REPLACE_WITH_READER_UID'",
+      "$letterId": {
+        ".write": "auth != null && auth.provider === 'anonymous' && !data.exists() && newData.exists()",
+        ".validate": "newData.hasChildren(['name', 'message', 'senderUid', 'createdAt'])",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length <= 40"
+        },
+        "message": {
+          ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 500"
+        },
+        "senderUid": {
+          ".validate": "newData.isString() && newData.val() === auth.uid"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber() && newData.val() <= now + 60000"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
