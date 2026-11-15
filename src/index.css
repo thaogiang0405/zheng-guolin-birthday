@@ -1318,3 +1318,150 @@ body { overflow-y: auto; touch-action: pan-y; }
 @media (prefers-reduced-motion:reduce) {
   .sealed-mail-mini { animation:none !important; }
 }
+
+
+/* Small fan envelopes are physically INSIDE the unlocked main letter. */
+.letter-inset {
+  position:relative;
+  z-index:2;
+  margin-top:clamp(2.7rem,6vw,4.5rem);
+  padding-top:1.15rem;
+  border-top:1px solid rgba(186,135,74,.28);
+}
+.letter-inset__separator {
+  margin:0 auto 1.6rem;
+  text-align:center;
+  color:#c39b65;
+  letter-spacing:.35rem;
+  font-size:1rem;
+}
+.letter-inset__separator--bottom { margin:2.2rem auto 0; }
+.letter-inset__auth {
+  padding:clamp(1.25rem,3.5vw,2rem);
+  border-radius:1.3rem;
+  background:linear-gradient(135deg,rgba(247,224,185,.60),rgba(255,250,235,.65));
+  border:1px solid rgba(189,143,83,.33);
+  box-shadow:inset 0 1px rgba(255,255,255,.8);
+}
+.letter-inset__preview {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:clamp(6px,1.7vw,15px);
+  padding:5px;
+}
+.letter-inset__mini-envelope {
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:clamp(50px,11vw,80px);
+  aspect-ratio:1.35;
+  border-radius:6px;
+  background:linear-gradient(135deg,#fff4db,#dbb887);
+  color:#9a7046;
+  border:1px solid #d7b17e;
+  box-shadow:0 9px 17px rgba(125,81,39,.17);
+  transform:rotate(-4deg);
+}
+.letter-inset__mini-envelope:nth-child(2n) {
+  transform:translateY(-8px) rotate(7deg);
+  background:linear-gradient(135deg,#f8edd9,#edcbb3);
+}
+.letter-inset__mini-envelope:nth-child(3n) { transform:translateY(5px) rotate(-7deg); }
+.letter-inset__mini-envelope i {
+  position:absolute;
+  top:53%;
+  left:50%;
+  display:grid;
+  place-items:center;
+  width:21px;
+  height:21px;
+  border:2px double #f7e2b5;
+  border-radius:50%;
+  background:#b4824b;
+  color:#fff4dc;
+  font-style:normal;
+  font-size:11px;
+  transform:translate(-50%,-50%);
+}
+.letter-inset__auth-submit {
+  background:linear-gradient(110deg,#e8bc81,#b7824b 60%,#d6a96d);
+  color:#fffaf0;
+  border:1px solid rgba(255,247,222,.75);
+  box-shadow:0 11px 20px rgba(127,77,31,.16);
+}
+.letter-inset__auth-submit:hover:not(:disabled) { filter:brightness(.97); transform:translateY(-2px); }
+.letter-inset__grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(.7rem,2vw,1.2rem);
+  align-items:start;
+}
+.letter-inset__card {
+  min-width:0;
+  padding:12px;
+  border-radius:1rem;
+  background:linear-gradient(135deg,rgba(255,249,233,.83),rgba(245,225,195,.87));
+  border:1px solid rgba(189,140,83,.4);
+  box-shadow:0 10px 25px rgba(127,90,45,.12);
+  transition:transform .23s,box-shadow .23s;
+}
+.letter-inset__card:hover { transform:translateY(-3px); box-shadow:0 15px 28px rgba(127,90,45,.17); }
+.letter-inset__card-button {
+  display:flex;
+  width:100%;
+  min-height:70px;
+  align-items:center;
+  gap:12px;
+  text-align:left;
+  border-radius:.75rem;
+  padding:4px;
+}
+.letter-inset__card-button:focus-visible,
+.letter-inset__auth-submit:focus-visible { outline:3px solid #b78654; outline-offset:3px; }
+.letter-inset__card-icon {
+  position:relative;
+  display:grid;
+  flex-shrink:0;
+  place-items:center;
+  width:54px;
+  height:48px;
+  border:1px solid #cfa879;
+  border-radius:7px;
+  background:linear-gradient(145deg,#ffeccc,#e3bf88);
+  color:#ae8253;
+  transform:rotate(-5deg);
+  box-shadow:0 5px 9px rgba(117,79,30,.1);
+}
+.letter-inset__card:nth-child(3n+2) .letter-inset__card-icon { background:linear-gradient(145deg,#fff1e2,#ebc6b5); transform:rotate(5deg); }
+.letter-inset__card:nth-child(3n) .letter-inset__card-icon { background:linear-gradient(145deg,#f7e6cd,#d7d5d4); }
+.letter-inset__card-icon span {
+  position:absolute;
+  top:58%;
+  left:50%;
+  width:21px;
+  height:21px;
+  display:grid;
+  place-items:center;
+  border:2px double #f6deba;
+  border-radius:50%;
+  background:#b98651;
+  font-size:11px;
+  color:#fff8e6;
+  transform:translate(-50%,-50%);
+}
+.letter-inset__note {
+  border-top:1px solid rgba(182,137,85,.3);
+  padding:1.1rem .45rem .9rem;
+  background:linear-gradient(#fff9ed,#fffaf0);
+  border-radius:0 0 .7rem .7rem;
+}
+@media (max-width:650px) {
+  .letter-inset__grid { grid-template-columns:1fr; }
+  .letter-inset__card { padding:10px; }
+  .letter-inset__mini-envelope { width:clamp(41px,12vw,66px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .letter-inset__card { transition:none; }
+}
