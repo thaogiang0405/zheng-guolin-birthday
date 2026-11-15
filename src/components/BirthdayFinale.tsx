@@ -65,7 +65,7 @@ export function BirthdayFinale({ locale, image, labels, onCelebrateEffect }: Bir
             </button>
             <a href="#wishes" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#795728]/45 bg-[#f9e0a2]/40 px-6 py-3 text-sm font-bold text-[#5c3b13] transition hover:-translate-y-0.5 hover:bg-[#fff3d0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#795728]">
               <BookHeart size={17} aria-hidden="true" />
-              {locale === "zh" ? "读来信 · 留下祝福" : "Đọc thư · Để lại lời chúc"}
+              {locale === "zh" ? "寄一封信 · 留下祝福" : "Gửi thư · Để lại lời chúc"}
             </a>
           </div>
         </motion.div>
