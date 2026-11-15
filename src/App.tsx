@@ -56,7 +56,6 @@ function BirthdayExperience() {
   const [locale, setLocale] = useState<Locale>(getStoredLocale);
   const [dark, setDark] = useState(getStoredTheme);
   const [introOpen, setIntroOpen] = useState(true);
-  const [recipientUnlocked, setRecipientUnlocked] = useState(false);
   const t = copy[locale];
 
   useEffect(() => {
@@ -166,7 +165,6 @@ function BirthdayExperience() {
           locale={locale}
           letter={birthdayConfig.letter.localized[locale]}
           onOpenEffect={() => { void audio.playEffect("letter"); }}
-          onUnlockChange={setRecipientUnlocked}
           labels={{
             eyebrow: t.letter.eyebrow,
             title: t.letter.title,
@@ -192,7 +190,6 @@ function BirthdayExperience() {
 
         <WishWall
           locale={locale}
-          recipientUnlocked={recipientUnlocked}
           maxLength={birthdayConfig.wishes.maxLength}
           labels={{
             eyebrow: t.wishes.eyebrow,
