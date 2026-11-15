@@ -3,6 +3,7 @@ import confetti from "canvas-confetti";
 import { Eye, EyeOff, Heart, KeyRound, LockKeyhole, MailOpen, RotateCcw, Sparkles, Star } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { StardustField } from "./StardustField";
+import RecipientLetters from "./RecipientLetters";
 import type { Locale } from "../types";
 
 interface BirthdayLetterProps {
@@ -206,15 +207,7 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect, onUnlockC
                   })}
                 </div>
                 <div className="letter-cosmos__paper-ornament letter-cosmos__paper-ornament--bottom" aria-hidden="true">✧ &nbsp; ♡ &nbsp; ✧</div>
-              </div>
-              <div className="letter-cosmos__read-more mx-auto mt-8 max-w-lg text-center">
-                <p className={`text-sm leading-7 text-[#f3e2c8] ${zh ? "font-chinese" : "font-vietnamese"}`}>
-                  {zh ? "还有更多来自大家的信和祝福，在星光的另一端等着您。" : "Ngoài lá thư này, vẫn còn những lời thương của các bạn khác đang chờ thầy đọc nữa."}
-                </p>
-                <a href="#wishes" className="letter-cosmos__unlock-button mt-4 inline-flex min-h-12 items-center justify-center gap-2 px-7">
-                  <Heart size={18} aria-hidden="true" />
-                  {zh ? "读一读大家的来信" : "Đọc những lá thư khác"}
-                </a>
+                <RecipientLetters locale={locale} />
               </div>
               <button type="button" className="letter-cosmos__relock mx-auto mt-7 flex items-center gap-2" onClick={sealAgain}>
                 <RotateCcw size={16} aria-hidden="true" />
