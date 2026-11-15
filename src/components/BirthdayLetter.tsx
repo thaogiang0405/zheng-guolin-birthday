@@ -23,7 +23,7 @@ interface BirthdayLetterProps {
  * and the letter text ship to the browser as part of this public Vite app.
  * Real privacy requires server-side authentication and protected content.
  */
-const LETTER_PASSPHRASE = "晓晓";
+const LETTER_PASSPHRASE = "2705520";
 
 export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: BirthdayLetterProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -136,6 +136,9 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: Birthda
                     <input
                       id="secret-letter-passcode"
                       type={showPasscode ? "text" : "password"}
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      maxLength={12}
                       autoComplete="off"
                       spellCheck={false}
                       value={passcode}
@@ -164,7 +167,7 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: Birthda
                   </button>
                 </form>
                 <p className="mt-5 text-center text-[0.75rem] leading-6 text-[#cfc6c3]">
-                  {zh ? "✧ 提示：那两个亲昵的字 ✧" : "✧ Gợi ý: hai chữ gọi thật thân thương ✧"}
+                  {zh ? "✧ 提示：一个特别的日子，加上一句数字告白 ✧" : "✧ Gợi ý: Một ngày đặc biệt và lời thương bằng số ✧"}
                 </p>
               </div>
             </motion.div>
@@ -200,6 +203,15 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: Birthda
                   })}
                 </div>
                 <div className="letter-cosmos__paper-ornament letter-cosmos__paper-ornament--bottom" aria-hidden="true">✧ &nbsp; ♡ &nbsp; ✧</div>
+              </div>
+              <div className="letter-cosmos__read-more mx-auto mt-8 max-w-lg text-center">
+                <p className={`text-sm leading-7 text-[#f3e2c8] ${zh ? "font-chinese" : "font-vietnamese"}`}>
+                  {zh ? "还有更多来自大家的信和祝福，在星光的另一端等着您。" : "Ngoài lá thư này, vẫn còn những lời thương của các bạn khác đang chờ thầy đọc nữa."}
+                </p>
+                <a href="#wishes" className="letter-cosmos__unlock-button mt-4 inline-flex min-h-12 items-center justify-center gap-2 px-7">
+                  <Heart size={18} aria-hidden="true" />
+                  {zh ? "读一读大家的来信" : "Đọc những lá thư khác"}
+                </a>
               </div>
               <button type="button" className="letter-cosmos__relock mx-auto mt-7 flex items-center gap-2" onClick={sealAgain}>
                 <RotateCcw size={16} aria-hidden="true" />
