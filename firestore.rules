@@ -17,17 +17,14 @@ service cloud.firestore {
       // with validated fields. They cannot read even their own submission.
       allow create: if request.auth != null
         && request.auth.token.firebase.sign_in_provider == 'anonymous'
-        && request.resource.data.keys().hasOnly(['kind', 'name', 'message', 'senderUid'])
-        && request.resource.data.keys().hasAll(['kind', 'name', 'message', 'senderUid'])
+        && request.resource.data.keys().hasOnly(['name', 'message', 'senderUid'])
+        && request.resource.data.keys().hasAll(['name', 'message', 'senderUid'])
         && request.resource.data.senderUid == request.auth.uid
-        && request.resource.data.kind in ['letter', 'wish']
         && request.resource.data.name is string
         && request.resource.data.name.size() <= 40
         && request.resource.data.message is string
         && request.resource.data.message.size() > 0
-        && request.resource.data.message.size() <= 1500
-        && (request.resource.data.kind == 'letter' ||
-            request.resource.data.message.size() <= 180);
+        && request.resource.data.message.size() <= 500;
 
       // Only one explicitly approved Firebase Authentication account can read
       // any of the sealed envelopes. Replace the placeholder UID in Firebase.
