@@ -175,7 +175,7 @@ export const birthdayConfig: BirthdayConfig = {
     }
   },
   wishes: {
-    maxLength: 180,
+    maxLength: 500,
     maxVisible: 12
   }
 };
