@@ -1,7 +1,7 @@
 {
   "rules": {
     "fanLetters": {
-      ".read": "auth != null && auth.uid === 'REPLACE_WITH_READER_UID'",
+      ".read": "auth != null && auth.uid === 'AznXPV5DSiZYh22z8VOko4cQKys2'",
       "$letterId": {
         ".write": "auth != null && auth.provider === 'anonymous' && !data.exists() && newData.exists()",
         ".validate": "newData.hasChildren(['name', 'message', 'senderUid', 'createdAt'])",
