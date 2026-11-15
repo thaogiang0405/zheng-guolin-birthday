@@ -211,9 +211,9 @@ export const copy: Record<Locale, SiteCopy> = {
       reset: "Ước thêm một lần nữa"
     },
     wishes: {
-      eyebrow: "LỜI CHÚC TỪ TRÁI TIM",
-      title: "Gửi một điều ước cho Quốc Lâm",
-      description: "Để lại vài lời ấm áp và cùng làm ngày hôm nay rực rỡ hơn.",
+      eyebrow: "NHỮNG LÁ THƯ TỪ TRÁI TIM",
+      title: "Một dải ngân hà gửi Trịnh lão sư",
+      description: "Sau lá thư bí mật, vẫn còn rất nhiều điều muốn nói. Cùng mở những lá thư và lời chúc của mọi người, rồi để lại đôi dòng cho thầy nhé.",
       inputLabel: "Lời chúc của bạn",
       inputPlaceholder: "Viết lời chúc sinh nhật của bạn tại đây...",
       submit: "Gửi lời chúc",
@@ -332,9 +332,9 @@ export const copy: Record<Locale, SiteCopy> = {
       reset: "再许一个愿望"
     },
     wishes: {
-      eyebrow: "来自心底的祝福",
-      title: "送给国霖一份祝福",
-      description: "留下几句温暖的话，让今天更加闪耀。",
+      eyebrow: "来自心底的来信",
+      title: "写给郑老师的星光银河",
+      description: "秘密信笺之外，还有来自大家的心意。一起读读粉丝的来信与祝福，也留下想对郑老师说的话吧。",
       inputLabel: "你的祝福",
       inputPlaceholder: "在这里写下你的生日祝福...",
       submit: "送出祝福",
