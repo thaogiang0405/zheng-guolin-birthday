@@ -211,9 +211,9 @@ export const copy: Record<Locale, SiteCopy> = {
       reset: "Ước thêm một lần nữa"
     },
     wishes: {
-      eyebrow: "NHỮNG LÁ THƯ TỪ TRÁI TIM",
-      title: "Một dải ngân hà gửi Trịnh lão sư",
-      description: "Sau lá thư bí mật, vẫn còn rất nhiều điều muốn nói. Cùng mở những lá thư và lời chúc của mọi người, rồi để lại đôi dòng cho thầy nhé.",
+      eyebrow: "NHỮNG LÁ THƯ ĐƯỢC NIÊM PHONG",
+      title: "Hộp thư bí mật gửi Trịnh lão sư",
+      description: "Mỗi lời nhắn là một phong thư nhỏ dành riêng cho thầy. Hãy viết điều bạn muốn gửi gắm; sau khi gửi, thư sẽ được cất kín và chỉ người nhận có quyền mới đọc được.",
       inputLabel: "Lời chúc của bạn",
       inputPlaceholder: "Viết lời chúc sinh nhật của bạn tại đây...",
       submit: "Gửi lời chúc",
@@ -332,9 +332,9 @@ export const copy: Record<Locale, SiteCopy> = {
       reset: "再许一个愿望"
     },
     wishes: {
-      eyebrow: "来自心底的来信",
-      title: "写给郑老师的星光银河",
-      description: "秘密信笺之外，还有来自大家的心意。一起读读粉丝的来信与祝福，也留下想对郑老师说的话吧。",
+      eyebrow: "一封封密封的心意",
+      title: "郑老师的秘密信箱",
+      description: "每一封信都是留给郑老师的独特心意。写下想对老师说的话，寄出后信封便会封好，只有被授权的收件人才能拆阅。",
       inputLabel: "你的祝福",
       inputPlaceholder: "在这里写下你的生日祝福...",
       submit: "送出祝福",
