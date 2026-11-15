@@ -155,24 +155,22 @@ export const birthdayConfig: BirthdayConfig = {
     },
     localized: {
       vi: [
-        "Quốc Lâm thân mến,",
-        "Chúc mừng sinh nhật!",
-        "Cảm ơn anh vì tất cả những vai diễn tuyệt vời, những khoảnh khắc khó quên và những nụ cười ấm áp đã sẻ chia cùng chúng em.",
-        "Mong chương mới của cuộc đời anh có thật nhiều sức khỏe, những ngày bình yên, ký ức đẹp và vô vàn lý do để mỉm cười.",
-        "Anh không cần tỏa sáng hơn bất kỳ ai.",
-        "Chỉ cần tiếp tục là con người tuyệt vời mà anh vốn có.",
-        "生日快乐，郑国霖！",
-        "Thân mến, từ một người sẽ luôn cổ vũ cho anh."
+        "Gửi Trịnh lão sư thương mến,",
+        "Có lẽ thầy sẽ chẳng bao giờ biết được rằng, ở một nơi nào đó, có những người vẫn luôn dõi theo thầy bằng tất cả sự yêu mến và trân trọng. Từ những năm tháng trên màn ảnh, qua từng nhân vật, từng ánh mắt và nụ cười, thầy đã vô tình trở thành một phần ký ức thật đẹp trong lòng chúng em.",
+        "Thời gian trôi qua, những vai diễn rồi cũng khép lại, nhưng tình cảm dành cho thầy thì vẫn còn nguyên vẹn. Thật vui khi hôm nay vẫn được nhìn thấy thầy, được bắt gặp những nụ cười gần gũi và những khoảnh khắc giản dị. Dù ở đâu, dù đang làm gì, Trịnh lão sư vẫn luôn có một sức hút rất riêng mà chúng em vô cùng yêu quý.",
+        "Nhân ngày sinh nhật, chúng em không mong điều gì quá lớn lao, chỉ mong thầy luôn mạnh khỏe, bình an và hạnh phúc. Mong những tháng ngày phía trước sẽ thật dịu dàng, để thầy được làm những điều mình thích, gặp những người chân thành và có thật nhiều lý do để mỉm cười.",
+        "晓晓，生日快乐！",
+        "Mong tuổi mới của thầy có thật nhiều niềm vui, và mỗi ngày đều trôi qua theo cách mà thầy mong muốn.",
+        "— Gửi đến thầy, bằng tất cả yêu thương. ♡"
       ],
       zh: [
-        "亲爱的国霖：",
-        "生日快乐！",
-        "感谢你为我们带来这么多精彩角色、难忘瞬间和温暖笑容。",
-        "愿你人生的新篇章里，充满健康、宁静的日子、美好的回忆和无数微笑的理由。",
-        "你不必比任何人更加耀眼。",
-        "只要继续做那个本就无比美好的自己。",
-        "生日快乐，郑国霖！",
-        "满怀爱意，来自一个永远为你加油的人。"
+        "亲爱的郑老师：",
+        "也许您永远不会知道，在世界的某个角落，一直有人怀着满满的喜欢与珍惜，默默关注着您。从那些荧幕上的岁月开始，一个个角色、一个个眼神、一抹抹微笑，都悄悄成为了我们心中珍贵而美好的回忆。",
+        "时光慢慢向前，故事终会落幕，但对您的喜爱却始终如初。如今，还能看到您的笑容，看到那些亲切而真实的日常瞬间，真的让人觉得很幸福。无论身在何处，无论以怎样的方式与大家相遇，郑老师始终有着独一无二的魅力。",
+        "在这个特别的日子里，我们只希望您身体健康，平安喜乐，幸福常伴。愿往后的日子里，您能做自己喜欢的事，遇见真诚善良的人，每一天都有值得微笑的小美好。",
+        "晓晓，生日快乐！",
+        "愿新的一岁有更多欢喜，也愿每一天都能如您所愿，自在而美好。",
+        "— 满怀爱意，献给您。♡"
       ]
     }
   },
