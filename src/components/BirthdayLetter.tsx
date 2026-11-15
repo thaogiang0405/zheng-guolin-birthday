@@ -10,7 +10,6 @@ interface BirthdayLetterProps {
   locale: Locale;
   letter: string[];
   onOpenEffect?: () => void;
-  onUnlockChange?: (unlocked: boolean) => void;
   labels: {
     eyebrow: string;
     title: string;
@@ -27,7 +26,7 @@ interface BirthdayLetterProps {
  */
 const LETTER_PASSPHRASE = "2705520";
 
-export function BirthdayLetter({ locale, letter, labels, onOpenEffect, onUnlockChange }: BirthdayLetterProps) {
+export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: BirthdayLetterProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [passcode, setPasscode] = useState("");
   const [showPasscode, setShowPasscode] = useState(false);
@@ -43,7 +42,6 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect, onUnlockC
     }
     setHasError(false);
     setIsOpen(true);
-    onUnlockChange?.(true);
     onOpenEffect?.();
     if (!reduceMotion) {
       confetti({
@@ -59,7 +57,6 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect, onUnlockC
 
   const sealAgain = () => {
     setIsOpen(false);
-    onUnlockChange?.(false);
     setPasscode("");
     setHasError(false);
     setShowPasscode(false);
