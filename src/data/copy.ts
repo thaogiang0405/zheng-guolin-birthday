@@ -203,7 +203,7 @@ export const copy: Record<Locale, SiteCopy> = {
     cake: {
       eyebrow: "ĐIỀU ƯỚC DƯỚI ÁNH NẾN",
       title: "Hãy ước một điều thật đẹp",
-      description: "Chạm vào chiếc bánh, nhắm mắt lại, và gửi một điều ước vào năm mới.",
+      description: "Thắp lên năm ngọn nến, nhắm mắt ước một điều thật đẹp cho thầy, rồi thổi nến để gửi điều ước ấy vào những vì sao.",
       wishPrompt: "Điều ước của anh là gì?",
       lightCandles: "Thắp nến",
       blowCandles: "Thổi nến",
@@ -324,7 +324,7 @@ export const copy: Record<Locale, SiteCopy> = {
     cake: {
       eyebrow: "烛光下的心愿",
       title: "许下一个美好的愿望",
-      description: "轻触蛋糕，闭上眼睛，把心愿送往新的一岁。",
+      description: "点亮五盏烛光，闭上眼睛为郑老师许下心愿，再轻轻吹灭蜡烛，让祝福飞向星空。",
       wishPrompt: "你的心愿是什么？",
       lightCandles: "点亮蜡烛",
       blowCandles: "吹灭蜡烛",
