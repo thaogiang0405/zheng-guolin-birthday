@@ -204,7 +204,7 @@ export function BirthdayLetter({ locale, letter, labels, onOpenEffect }: Birthda
                   })}
                 </div>
                 <div className="letter-cosmos__paper-ornament letter-cosmos__paper-ornament--bottom" aria-hidden="true">✧ &nbsp; ♡ &nbsp; ✧</div>
-                <RecipientLetters locale={locale} />
+                <RecipientLetters locale={locale} passcode={passcode} />
               </div>
               <button type="button" className="letter-cosmos__relock mx-auto mt-7 flex items-center gap-2" onClick={sealAgain}>
                 <RotateCcw size={16} aria-hidden="true" />
