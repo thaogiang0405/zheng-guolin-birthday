@@ -966,3 +966,81 @@ body { overflow-y: auto; touch-action: pan-y; }
 @media (prefers-reduced-motion:reduce) {
   .letter-cosmos__envelope,.letter-cosmos__envelope-aura,.letter-cosmos__floater { animation:none !important; }
 }
+
+
+/* ===== Shared birthday fan mailbook ===== */
+#main-content #wishes.fan-letters-section {
+  padding-block: clamp(5rem,9vw,8rem);
+  background:
+    radial-gradient(ellipse 45% 36% at 7% 16%,rgba(177,130,78,.20),transparent 72%),
+    radial-gradient(ellipse 45% 50% at 89% 82%,rgba(114,131,185,.19),transparent 75%),
+    linear-gradient(160deg,#131b2d 0%,#222137 48%,#151e30 100%);
+  color:#fff4e0;
+}
+.fan-letters-section .sd-field { z-index:0; opacity:.26; }
+.fan-letters-composer {
+  border-radius:1.75rem;
+  border:1px solid rgba(236,209,165,.75);
+  background:
+    radial-gradient(circle at 0 0,rgba(255,255,255,.86),transparent 35%),
+    linear-gradient(145deg,#fff9ed 0%,#f6e7d0 62%,#f8eddd 100%);
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.31),
+    0 0 0 7px rgba(241,203,140,.055),
+    inset 0 0 0 4px rgba(198,146,76,.06);
+  padding:clamp(1.25rem,3vw,2.4rem);
+}
+.fan-letters-textarea {
+  background-image:repeating-linear-gradient(transparent 0px,transparent 30px,rgba(190,153,105,.12) 30px,rgba(190,153,105,.12) 31px);
+  background-position:0 13px;
+}
+.fan-letters-card {
+  padding:clamp(1.1rem,2vw,1.5rem);
+  border:1px solid #e5c99e;
+  border-radius:1.2rem 1.2rem 1.2rem .4rem;
+  background:
+    radial-gradient(circle at 8% 4%,rgba(255,255,255,.85),transparent 53%),
+    linear-gradient(145deg,#fffaf0,#f3e4c9);
+  box-shadow:0 17px 38px rgba(1,9,24,.23),inset 0 0 0 4px rgba(178,129,76,.065);
+  transform:rotate(var(--fan-card-turn));
+  transition:transform .25s,box-shadow .25s;
+}
+.fan-letters-card:nth-child(3n+2) {
+  background:
+    radial-gradient(circle at 8% 4%,rgba(255,255,255,.8),transparent 53%),
+    linear-gradient(145deg,#fcfbf7,#e8eff0);
+}
+.fan-letters-card:nth-child(3n) {
+  background:
+    radial-gradient(circle at 8% 4%,rgba(255,255,255,.78),transparent 53%),
+    linear-gradient(145deg,#fff9ef,#f5dcd7);
+}
+.fan-letters-card:hover,
+.fan-letters-card:focus-within {
+  transform:rotate(0) translateY(-4px);
+  box-shadow:0 22px 43px rgba(1,9,24,.27);
+  z-index:2;
+}
+.fan-letters-card__stamp {
+  position:absolute;
+  right:-11px;
+  top:-11px;
+  display:grid;
+  place-items:center;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#b6854c;
+  color:#fff6de;
+  font-size:24px;
+  box-shadow:0 4px 13px rgba(83,51,24,.23);
+  transform:rotate(16deg);
+}
+.letter-cosmos__read-more a:hover { filter:brightness(1.05); transform:translateY(-2px); }
+@media (max-width:640px) {
+  .fan-letters-card { transform:none; }
+  .fan-letters-card:hover { transform:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .fan-letters-card { transform:none; transition:none; }
+}
