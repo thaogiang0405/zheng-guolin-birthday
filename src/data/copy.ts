@@ -190,14 +190,14 @@ export const copy: Record<Locale, SiteCopy> = {
     },
     letter: {
       eyebrow: "GỬI TRỌN YÊU THƯƠNG",
-      title: "Một lá thư dành cho anh",
-      description: "Có một điều dịu dàng đang được cất trong phong thư này.",
+      title: "Một lá thư dành riêng cho thầy",
+      description: "Giữa những vì sao, có một lá thư chỉ chờ đúng người mở ra.",
       sealed: "Một lá thư đang chờ được mở",
       open: "Mở thư",
       openAria: "Mở lá thư sinh nhật",
       close: "Khép thư",
       signature: "— Với tất cả yêu thương",
-      envelopeTo: "GỬI ĐẾN 郑国霖",
+      envelopeTo: "GỬI ĐẾN 郑老师",
       envelopeFrom: "VỚI TẤT CẢ YÊU THƯƠNG"
     },
     cake: {
@@ -311,14 +311,14 @@ export const copy: Record<Locale, SiteCopy> = {
     },
     letter: {
       eyebrow: "满怀爱意",
-      title: "写给你的一封信",
-      description: "这封信里，藏着一份温柔的心意。",
+      title: "写给郑老师的一封信",
+      description: "星光之间，藏着一封只为特别之人准备的信。",
       sealed: "一封等待开启的信",
       open: "开启信笺",
       openAria: "打开生日信",
       close: "合上信笺",
       signature: "— 满怀爱意",
-      envelopeTo: "TO 郑国霖",
+      envelopeTo: "TO 郑老师",
       envelopeFrom: "WITH ALL OUR LOVE"
     },
     cake: {
