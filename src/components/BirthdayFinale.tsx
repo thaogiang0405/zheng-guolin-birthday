@@ -1,5 +1,5 @@
 import confetti from "canvas-confetti";
-import { PartyPopper, Sparkles } from "lucide-react";
+import { BookHeart, PartyPopper, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Locale } from "../types";
 import { StardustField } from "./StardustField";
@@ -59,9 +59,15 @@ export function BirthdayFinale({ locale, image, labels, onCelebrateEffect }: Bir
           <h2 className="font-editorial mt-6 text-[clamp(3.1rem,7vw,6.5rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[#29282C]">{labels.title}</h2>
           <p className={`mt-5 text-2xl font-semibold text-[#725113] ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.chineseTitle}</p>
           <p className={`mx-auto mt-7 max-w-lg text-base leading-8 text-[#29282C]/75 lg:mx-0 ${locale === "zh" ? "font-chinese" : "font-vietnamese"}`}>{labels.body}</p>
-          <button type="button" onClick={celebrate} className="golden-button mt-9 border-[#29282C]/15 bg-[#FFFCF6] hover:bg-white">
-            <PartyPopper className="h-4 w-4" aria-hidden="true" />{labels.celebrateAgain}
-          </button>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+            <button type="button" onClick={celebrate} className="golden-button border-[#29282C]/15 bg-[#FFFCF6] hover:bg-white">
+              <PartyPopper className="h-4 w-4" aria-hidden="true" />{labels.celebrateAgain}
+            </button>
+            <a href="#wishes" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#795728]/45 bg-[#f9e0a2]/40 px-6 py-3 text-sm font-bold text-[#5c3b13] transition hover:-translate-y-0.5 hover:bg-[#fff3d0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#795728]">
+              <BookHeart size={17} aria-hidden="true" />
+              {locale === "zh" ? "读来信 · 留下祝福" : "Đọc thư · Để lại lời chúc"}
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
