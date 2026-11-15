@@ -1044,3 +1044,130 @@ body { overflow-y: auto; touch-action: pan-y; }
 @media (prefers-reduced-motion:reduce) {
   .fan-letters-card { transform:none; transition:none; }
 }
+
+
+/* ===== Candle ritual 2.0 — cosmic champagne birthday stage ===== */
+#cake.cake-cosmos {
+  min-height: 100svh;
+  padding-block: clamp(5.5rem,9vw,9rem);
+  color: #fff4e6;
+  background:
+    radial-gradient(ellipse 52% 49% at 34% 45%,rgba(141,98,128,.35),transparent 75%),
+    radial-gradient(ellipse 42% 42% at 88% 69%,rgba(167,116,69,.24),transparent 79%),
+    radial-gradient(ellipse 55% 45% at 73% -15%,rgba(86,123,170,.20),transparent 70%),
+    linear-gradient(140deg,#0f1529,#1c1d35 53%,#10182b);
+}
+.cake-cosmos .sd-field { opacity:.62; z-index:0; }
+.cake-cosmos__nebula { position:absolute; pointer-events:none; width:clamp(280px,48vw,650px); aspect-ratio:1; border-radius:50%; opacity:.38; filter:blur(76px); }
+.cake-cosmos__nebula--left { top:10%; left:-16%; background:radial-gradient(circle,#8d6ab1,transparent 72%); }
+.cake-cosmos__nebula--right { bottom:-15%; right:-10%; background:radial-gradient(circle,#cfa064,transparent 72%); }
+.cake-cosmos__moon { position:absolute; z-index:1; top:9%; right:11%; font:100 clamp(2.8rem,6vw,5rem)/1 Georgia,serif; color:rgba(255,222,164,.69); text-shadow:0 0 45px rgba(243,202,134,.4); pointer-events:none; }
+.cake-cosmos__eyebrow { display:flex; align-items:center; justify-content:center; gap:11px; color:#f4d99e; font-size:11px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; }
+#cake .cake-cosmos__title { font-size:clamp(2.5rem,5.5vw,5rem); line-height:1.2; font-weight:800; letter-spacing:-.035em; background:linear-gradient(100deg,#fffdf2,#f4d49f 43%,#fff4da 75%,#d7bad3); background-clip:text; -webkit-background-clip:text; color:transparent; filter:drop-shadow(0 8px 25px rgba(236,183,109,.13)); }
+.cake-cosmos__experience { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); align-items:center; gap:clamp(1.5rem,4vw,4rem); max-width:1120px; margin-inline:auto; }
+.cake-cosmos__scene { position:relative; width:100%; min-width:0; min-height:560px; display:grid; place-items:center; isolation:isolate; }
+.cake-cosmos__aura { position:absolute; width:min(98%,560px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(251,215,151,.16),rgba(238,191,117,.07) 43%,transparent 71%); filter:blur(12px); transition:opacity .8s,transform .8s; opacity:.58; }
+.cake-cosmos__aura--lit { opacity:1; transform:scale(1.11); background:radial-gradient(circle,rgba(255,216,137,.41),rgba(240,182,100,.14) 38%,transparent 72%); }
+.cake-cosmos__orbit { position:absolute; border-radius:50%; border:1px solid rgba(242,211,155,.21); pointer-events:none; transform:rotate(-17deg); }
+.cake-cosmos__orbit--outer { width:min(100%,560px); aspect-ratio:1; box-shadow:inset 0 0 30px rgba(245,215,168,.04); }
+.cake-cosmos__orbit--inner { width:min(77%,430px); aspect-ratio:1; transform:rotate(24deg); border-color:rgba(161,194,233,.20); }
+.cake-cosmos__small-star { position:absolute; z-index:2; pointer-events:none; font-family:Georgia,serif; font-size:clamp(26px,4vw,45px); color:#f6d8a4; text-shadow:0 0 19px rgba(255,208,128,.72); animation:cake-star-pulse 4s ease-in-out infinite; }
+.cake-cosmos__small-star--a { left:5%; top:15%; }
+.cake-cosmos__small-star--b { right:10%; top:18%; font-size:26px; animation-delay:-2s; color:#bfe8ff; }
+.cake-cosmos__small-star--c { right:2%; bottom:28%; font-size:31px; animation-delay:-1.4s; }
+.cake-cosmos__small-star--d { left:10%; bottom:33%; font-size:20px; animation-delay:-3s; }
+.cake-cosmos__pedestal { position:absolute; bottom:53px; width:min(92%,440px); height:68px; border-radius:50%; background:radial-gradient(ellipse,rgba(234,190,130,.43),rgba(124,82,65,.13) 50%,transparent 72%); filter:blur(12px); pointer-events:none; }
+.cake-cosmos__ground-glow { position:absolute; bottom:72px; width:min(70%,330px); height:45px; border-radius:50%; background:rgba(255,217,161,.14); filter:blur(27px); pointer-events:none; }
+.cake-cosmos__cake-button { display:grid; place-items:center; margin-top:65px; border:0; border-radius:1rem; background:transparent; padding:0; outline-offset:8px; }
+.cake-cosmos__cake-button:not(:disabled):hover .cake-cosmos__cake { transform:translateY(-5px) scale(1.01); }
+.cake-cosmos__cake-button:focus-visible { outline:3px solid #f5d89d; }
+.cake-cosmos__cake {
+  position:relative;
+  width:380px;
+  height:350px;
+  max-width:100%;
+  transform-origin:center bottom;
+  transition:transform .42s cubic-bezier(.2,.8,.3,1);
+  filter:drop-shadow(0 27px 27px rgba(1,5,17,.42));
+}
+.cake-cosmos__plate { position:absolute; z-index:1; bottom:0; left:50%; transform:translateX(-50%); width:95%; height:29px; border-radius:50%; background:linear-gradient(#fff9ea,#d7b47d 63%,#866c5c); border:3px solid #fff5df; box-shadow:0 13px 0 rgba(140,107,73,.24),0 21px 34px rgba(6,10,29,.38); }
+.cake-cosmos__tier { position:absolute; left:50%; transform:translateX(-50%); overflow:hidden; border:3px solid rgba(255,250,224,.62); background:linear-gradient(90deg,#ae765a 0%,#e2ae75 12%,#f7dba5 45%,#efc78d 70%,#ae795a 100%); box-shadow:inset 15px 0 25px rgba(255,255,255,.22),inset -17px 0 30px rgba(115,65,39,.23),0 8px 13px rgba(51,24,29,.20); }
+.cake-cosmos__tier--bottom { z-index:2; width:91%; height:120px; bottom:23px; border-radius:36px 36px 24px 24px; }
+.cake-cosmos__tier--middle { z-index:3; width:72%; height:104px; bottom:128px; border-radius:33px 33px 19px 19px; background:linear-gradient(90deg,#c38d77,#f4c8aa 18%,#fff0cd 50%,#efc5a4 78%,#ae7c68); }
+.cake-cosmos__tier--top { z-index:4; width:52%; height:86px; bottom:219px; border-radius:30px 30px 17px 17px; background:linear-gradient(90deg,#ca9f74,#ffdfb2 21%,#fff0cb 51%,#edc18b 79%,#bb8867); }
+.cake-cosmos__icing { position:absolute; inset:-4px -4px auto; height:33px; background:linear-gradient(180deg,#fffdf3,#fff6e3 70%,#f5dfc3); border-radius:42% 42% 51% 51% / 56% 56% 48% 48%; box-shadow:0 7px 0 rgba(255,249,237,.80); }
+.cake-cosmos__icing::after { content:""; position:absolute; left:11%; top:19px; width:23px; height:26px; border-radius:0 0 18px 18px; background:#fff8ed; box-shadow:59px 5px 0 #fff8ed,123px -1px 0 #fff8ed,181px 4px 0 #fff8ed,243px 0 0 #fff8ed; }
+.cake-cosmos__tier--top .cake-cosmos__icing::after { box-shadow:55px 3px 0 #fff8ed,111px -2px 0 #fff8ed; }
+.cake-cosmos__tier-name { position:absolute; left:0; right:0; bottom:19px; text-align:center; font-size:27px; font-weight:800; letter-spacing:.15em; color:#996745; text-shadow:0 1px rgba(255,255,255,.57); }
+.cake-cosmos__pearl { position:absolute; top:52px; width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 25%,#fffefd,#ddaf7b 65%,#9c6948); box-shadow:0 0 10px rgba(252,224,173,.54); }
+.cake-cosmos__pearl--one { left:13%; }.cake-cosmos__pearl--two { left:32%; }.cake-cosmos__pearl--three { right:32%; }.cake-cosmos__pearl--four { right:13%; }
+.cake-cosmos__tier-moon { position:absolute; top:40px; left:50%; transform:translateX(-50%); color:#bd8e5f; font:47px/1 Georgia,serif; text-shadow:0 1px #fff2d7; }
+.cake-cosmos__tier-star { position:absolute; color:#ad7c4b; top:50px; font-size:24px; }
+.cake-cosmos__tier-star--one { left:22%; }.cake-cosmos__tier-star--two { right:22%; }
+.cake-cosmos__crown { position:absolute; top:40px; left:50%; transform:translateX(-50%); color:#b98649; font-size:27px; text-shadow:0 0 9px rgba(247,226,183,.7); }
+.cake-cosmos__candles { position:absolute; z-index:5; bottom:300px; left:50%; transform:translateX(-50%); display:flex; gap:11px; align-items:flex-end; }
+.cake-cosmos__candle { position:relative; width:13px; height:45px; background:repeating-linear-gradient(135deg,#a4d1dc 0 5px,#fff6e5 5px 10px); border-radius:5px 5px 2px 2px; box-shadow:inset -3px 0 rgba(67,106,132,.19); }
+.cake-cosmos__candle:nth-child(2),.cake-cosmos__candle:nth-child(4) { height:37px; }
+.cake-cosmos__candle:nth-child(3) { height:52px; }
+.cake-cosmos__candle::before { content:""; position:absolute; width:2px; height:9px; top:-7px; left:50%; transform:translateX(-50%); background:#59492e; }
+.cake-cosmos__flame { position:absolute; left:50%; bottom:calc(100% + 6px); width:16px; height:24px; background:linear-gradient(135deg,#fffefd 7%,#fff39c 39%,#f5ab39 77%,#d8782f); border-radius:75% 5% 70% 65%; opacity:0; transform:translateX(-50%) rotate(40deg) scale(.2); box-shadow:0 0 18px 7px rgba(250,188,76,.6),0 0 37px rgba(255,204,119,.5); transition:opacity .35s,transform .45s; }
+.cake-cosmos__flame::after { content:""; position:absolute; left:4px; bottom:4px; width:6px; height:11px; border-radius:70% 0 70% 70%; background:#fffaf2; }
+.cake-cosmos__candle--lit .cake-cosmos__flame { opacity:1; transform:translateX(-50%) rotate(40deg) scale(1); animation:cake-flame-flicker 1s ease-in-out infinite alternate; }
+.cake-cosmos__candle:nth-child(2) .cake-cosmos__flame { animation-delay:-.3s; }
+.cake-cosmos__candle:nth-child(3) .cake-cosmos__flame { animation-delay:-.7s; }
+.cake-cosmos__candle:nth-child(4) .cake-cosmos__flame { animation-delay:-.4s; }
+.cake-cosmos__candle:nth-child(5) .cake-cosmos__flame { animation-delay:-.9s; }
+.cake-cosmos__smoke { position:absolute; z-index:6; left:50%; bottom:337px; width:130px; height:95px; transform:translateX(-50%); pointer-events:none; }
+.cake-cosmos__smoke i { position:absolute; bottom:0; width:19px; height:19px; border-radius:50%; background:rgba(210,207,204,.50); filter:blur(4px); animation:cake-smoke-rise 2.1s ease-out forwards; }
+.cake-cosmos__smoke i:nth-child(1) { left:8px; animation-delay:.02s; }.cake-cosmos__smoke i:nth-child(2) { left:34px; animation-delay:.13s; }.cake-cosmos__smoke i:nth-child(3) { left:61px; animation-delay:.07s; }.cake-cosmos__smoke i:nth-child(4) { left:88px; animation-delay:.19s; }.cake-cosmos__smoke i:nth-child(5) { left:112px; animation-delay:.11s; }
+.cake-cosmos__scene-caption { position:absolute; bottom:9px; left:0; width:100%; text-align:center; font-size:12px; letter-spacing:.17em; color:#f7dbac; }
+.cake-cosmos__panel { min-width:0; padding:clamp(1.4rem,3.3vw,3rem); border-radius:2rem; border:1px solid rgba(249,215,162,.28); background:linear-gradient(145deg,rgba(254,242,212,.13),rgba(255,247,232,.045)); backdrop-filter:blur(17px); -webkit-backdrop-filter:blur(17px); box-shadow:0 28px 84px rgba(2,8,26,.29),inset 0 1px rgba(255,255,255,.12); }
+.cake-cosmos__steps { display:grid; gap:9px; }
+.cake-cosmos__step { display:flex; align-items:center; gap:12px; border:1px solid rgba(243,211,163,.12); border-radius:12px; background:rgba(8,12,31,.18); padding:11px 12px; color:#c3c0c9; font-size:13px; font-weight:650; transition:background .3s,border-color .3s,color .3s; }
+.cake-cosmos__step-number { width:29px; height:29px; display:grid; place-items:center; border-radius:50%; background:rgba(243,211,163,.13); color:#e6c794; font:18px/1 Georgia,serif; }
+.cake-cosmos__step--active { color:#fff4df; border-color:rgba(246,211,155,.61); background:rgba(233,178,106,.18); box-shadow:0 0 24px rgba(245,183,97,.09); }
+.cake-cosmos__step--done { color:#e6d4b4; border-color:rgba(249,208,135,.24); }
+.cake-cosmos__status { min-height:52px; font-size:14px; line-height:1.8; font-weight:600; color:#f6dcae; }
+.cake-cosmos__cta { display:flex; align-items:center; justify-content:center; gap:10px; min-height:54px; padding:13px 19px; border-radius:999px; border:1px solid rgba(255,249,216,.50); background:linear-gradient(105deg,#ffecc1,#daa765 49%,#fff3d2); color:#3c2a1b; font-size:14px; font-weight:850; box-shadow:0 12px 32px rgba(219,164,92,.25),inset 0 1px rgba(255,255,255,.58); transition:transform .25s,box-shadow .25s; }
+.cake-cosmos__cta:hover { transform:translateY(-3px); box-shadow:0 17px 38px rgba(219,164,92,.35); }
+.cake-cosmos__cta:focus-visible,.cake-cosmos__secret-button:focus-visible,.cake-cosmos__restart:focus-visible,.cake-cosmos__to-letters:focus-visible { outline:3px solid #f9d79d; outline-offset:4px; }
+.cake-cosmos__wait { min-height:54px; padding:16px 19px; border:1px solid rgba(248,214,159,.38); border-radius:999px; color:#f8d9a9; background:rgba(255,246,220,.08); font-size:13px; font-weight:700; }
+.cake-cosmos__result { padding:clamp(1.1rem,2vw,1.6rem); border:1px solid rgba(249,219,167,.39); border-radius:1.5rem; background:linear-gradient(140deg,rgba(212,168,103,.17),rgba(241,216,169,.06)); box-shadow:0 0 45px rgba(237,179,104,.08),inset 0 1px rgba(255,246,219,.13); text-align:center; }
+.cake-cosmos__secret-button { display:flex; align-items:center; justify-content:center; gap:9px; min-height:45px; padding:10px 18px; border:1px solid rgba(245,216,158,.58); border-radius:999px; color:#f8e5c8; background:rgba(250,226,184,.10); font-size:13px; font-weight:750; transition:background .2s; }
+.cake-cosmos__secret-button:hover { background:rgba(250,226,184,.20); }
+.cake-cosmos__secret-note { margin-top:15px; border-radius:15px; background:#fff7e8; color:#765134; padding:20px; line-height:1.95; font-size:14px; font-weight:600; }
+.cake-cosmos__restart { display:flex; justify-content:center; align-items:center; gap:8px; min-height:44px; color:#f5d6a4; border:1px solid rgba(246,213,161,.23); border-radius:999px; font-size:13px; font-weight:700; transition:background .2s; }
+.cake-cosmos__restart:hover { background:rgba(250,226,184,.11); }
+.cake-cosmos__to-letters { border:1px solid rgba(255,235,190,.56); background:linear-gradient(110deg,#f4d8a2,#f9edca); color:#5c3b25; box-shadow:0 11px 26px rgba(220,165,86,.22); transition:transform .2s; }
+.cake-cosmos__to-letters:hover { transform:translateY(-3px); }
+.cake-cosmos--blowing::after { content:""; position:absolute; z-index:3; inset:0; background:rgba(1,5,18,.32); pointer-events:none; animation:cake-blow-dim .74s ease-out forwards; }
+.cake-cosmos--celebrate .cake-cosmos__aura { background:radial-gradient(circle,rgba(255,219,153,.55),rgba(240,184,117,.17) 42%,transparent 72%); opacity:1; transform:scale(1.15); }
+@keyframes cake-star-pulse { 0%,100% { opacity:.43; transform:scale(.78) rotate(-10deg); } 50% { opacity:1; transform:scale(1.2) rotate(13deg); } }
+@keyframes cake-flame-flicker { from { transform:translateX(-50%) rotate(39deg) scale(.95,1.06); } to { transform:translateX(-50%) rotate(49deg) scale(1.07,.93); } }
+@keyframes cake-smoke-rise { 0% { opacity:0; transform:translate(0,0) scale(.55); } 15% { opacity:.68; } 100% { opacity:0; transform:translate(14px,-100px) scale(2.6); } }
+@keyframes cake-blow-dim { 0% { opacity:0; } 40% { opacity:1; } 100% { opacity:0; } }
+@media (max-width:920px) {
+  .cake-cosmos__experience { grid-template-columns:1fr; max-width:660px; gap:0; }
+  .cake-cosmos__scene { min-height:510px; }
+  .cake-cosmos__panel { margin-top:0; }
+}
+@media (max-width:480px) {
+  #cake.cake-cosmos { padding-block:5rem; }
+  .cake-cosmos__scene { min-height:425px; }
+  .cake-cosmos__cake { transform:scale(.79); transform-origin:center bottom; }
+  .cake-cosmos__cake-button { margin-top:30px; margin-bottom:-39px; }
+  .cake-cosmos__cake-button:not(:disabled):hover .cake-cosmos__cake { transform:scale(.79); }
+  .cake-cosmos__scene-caption { bottom:0; font-size:10px; }
+  .cake-cosmos__moon { right:5%; top:6%; }
+  .cake-cosmos__panel { padding:1.35rem; border-radius:1.5rem; }
+  .cake-cosmos__orbit--outer { width:96%; }
+}
+@media (max-width:360px) {
+  .cake-cosmos__cake { transform:scale(.69); }
+  .cake-cosmos__cake-button:not(:disabled):hover .cake-cosmos__cake { transform:scale(.69); }
+  .cake-cosmos__scene { min-height:390px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .cake-cosmos__small-star,.cake-cosmos__candle--lit .cake-cosmos__flame,.cake-cosmos__smoke i,.cake-cosmos--blowing::after { animation:none !important; }
+  .cake-cosmos__cake,.cake-cosmos__aura { transition:none !important; }
+}
