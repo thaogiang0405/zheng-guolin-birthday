@@ -9,10 +9,14 @@ Microsite sinh nhật tương tác dành tặng Trịnh Quốc Lâm (郑国霖),
 - Chuyển đổi tiếng Việt / tiếng Trung và giao diện sáng / tối.
 - Gallery polaroid có lightbox, thao tác vuốt trên thiết bị cảm ứng, điều hướng bàn phím và hỗ trợ Escape.
 - Phong thư mở tương tác, bánh sinh nhật thổi nến, khói và confetti.
-- Wish wall lưu lời chúc **trên localStorage của trình duyệt hiện tại**; không có backend và không chia sẻ công khai.
+- Hộp thư riêng: fan gửi thư hoặc lời chúc qua **Firebase Cloud Firestore**; thư niêm phong không hiển thị cho fan khác, chỉ người nhận được cấp quyền Firebase có thể đọc. Cần tự cấu hình Firebase và Rules trước khi gửi thật: xem [README_PRIVATE_FIREBASE.md](README_PRIVATE_FIREBASE.md).
 - Tôn trọng `prefers-reduced-motion`, có focus state, semantic landmark và responsive từ 320px.
 - Music player glassmorphism với đĩa vinyl, play/pause, mute, volume, seek/progress và trạng thái trống an toàn khi chưa có MP3.
 - Nhạc chỉ được yêu cầu phát sau thao tác **Mở món quà sinh nhật**; hiệu ứng âm thanh tùy chọn sẽ tự hạ âm lượng nhạc nền rồi khôi phục.
+
+## Hộp thư bí mật Firebase
+
+Thiết lập Firebase Authentication, Cloud Firestore, Firestore Rules và hai giá trị Vite theo hướng dẫn ở [README_PRIVATE_FIREBASE.md](README_PRIVATE_FIREBASE.md). Khi chưa cấu hình, website không cho gửi thư để tránh thông báo gửi thành công sai. Thư không gửi qua bình luận GitHub công khai.
 
 ## Yêu cầu
 
