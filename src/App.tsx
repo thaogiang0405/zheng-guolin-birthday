@@ -56,6 +56,7 @@ function BirthdayExperience() {
   const [locale, setLocale] = useState<Locale>(getStoredLocale);
   const [dark, setDark] = useState(getStoredTheme);
   const [introOpen, setIntroOpen] = useState(true);
+  const [recipientUnlocked, setRecipientUnlocked] = useState(false);
   const t = copy[locale];
 
   useEffect(() => {
@@ -165,6 +166,7 @@ function BirthdayExperience() {
           locale={locale}
           letter={birthdayConfig.letter.localized[locale]}
           onOpenEffect={() => { void audio.playEffect("letter"); }}
+          onUnlockChange={setRecipientUnlocked}
           labels={{
             eyebrow: t.letter.eyebrow,
             title: t.letter.title,
@@ -190,6 +192,7 @@ function BirthdayExperience() {
 
         <WishWall
           locale={locale}
+          recipientUnlocked={recipientUnlocked}
           maxLength={birthdayConfig.wishes.maxLength}
           labels={{
             eyebrow: t.wishes.eyebrow,
@@ -198,7 +201,7 @@ function BirthdayExperience() {
             placeholder: t.wishes.inputPlaceholder,
             submit: t.wishes.submit,
             empty: t.wishes.empty,
-            note: locale === "zh" ? "公开来信需登录 GitHub 发布" : "Thư công khai cần đăng nhập GitHub để đăng",
+            note: locale === "zh" ? "只有收件人可以查看" : "Chỉ người nhận được cấp quyền mới có thể xem thư",
           }}
         />
 
